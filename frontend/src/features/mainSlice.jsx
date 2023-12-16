@@ -12,8 +12,8 @@ export const mainSlice = createSlice({
     },
 })
 
-export const {setQuery} = searchSlice.actions
+export const {setShowQuestions} = mainSlice.actions
 
-export const selectQuery = state => state.search.query
+export const selectShowQuestions = state => state.main.showQuestions
 
-export default searchSlice.reducer
+export default mainSlice.reducer
