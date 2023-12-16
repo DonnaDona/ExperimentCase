@@ -2,21 +2,27 @@ import React, {useState} from "react";
 import {
     Button,
     Card,
-    Checkbox, FormControl,
+    Checkbox,
+    FormControl,
     FormControlLabel,
     InputLabel,
     MenuItem,
     Select,
     Stack,
+    TextField,
     Typography,
 } from "@mui/material";
+import {setPersonData, setShowQuestions} from "./experiment/experimentSlice.jsx";
+import {useDispatch} from "react-redux";
 
 export default function HomePage() {
     const [age, setAge] = useState('');
     const [eyeIssues, setEyeIssues] = useState(false);
     const [dyslexia, setDyslexia] = useState(false);
     const [isNativeEnglishSpeaker, setIsNativeEnglishSpeaker] = useState(false);
-    const [programmingExperience, setProgrammingExperience] = useState('');
+    const [programmingExperience, setProgrammingExperience] = useState(0);
+
+    const dispatch = useDispatch();
 
     const handleCheckboxChange = (event, setterFunction) => {
         setterFunction(event.target.checked);
@@ -33,11 +39,13 @@ export default function HomePage() {
         console.log("Native English Speaker: " + isNativeEnglishSpeaker);
         console.log("Programming Experience: " + programmingExperience);
 
+        dispatch(setPersonData({age, eyeIssues, dyslexia, isNativeEnglishSpeaker, programmingExperience}));
 
+        dispatch(setShowQuestions(true));
     }
 
     return (
-        <Card sx={{padding: 5, bgcolor: '#e8ecfa', width: 650}}>
+        <Card sx={{padding: 5, width: 'min(600, 100%)'}}>
             <Typography variant="h2">Camel or Kebab case?</Typography>
             <Typography variant="h5" sx={{marginY: 2}}>
                 Choose the correct spelling for each format.
@@ -53,54 +61,52 @@ export default function HomePage() {
 
             <Stack>
                 <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
-                <FormControl fullWidth>
-                    <InputLabel id="age-label">Age</InputLabel>
-
-                    <Select
-                    labelId="age-label"
-                    id="age"
-                    value={age}
-                    label="Age"
-                    onChange={(event) => setAge(event.target.value)}
-                >
-                    <MenuItem value={10}>1-18</MenuItem>
-                    <MenuItem value={20}>19-29</MenuItem>
-                    <MenuItem value={30}>30-49</MenuItem>
-                    <MenuItem value={40}>50+</MenuItem>
-                </Select>
+                <FormControl sx={{margin: 2}}>
+                    <TextField
+                        type="date"
+                        label="Date of Birth"
+                        variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}/>
                 </FormControl>
 
                 <FormControlLabel
                     control={<Checkbox checked={eyeIssues}
                                        onChange={(event) => handleCheckboxChange(event, setEyeIssues)}/>}
                     label="Eye Issues"
+                    sx={{marginX: 1}}
                 />
 
                 <FormControlLabel
                     control={<Checkbox checked={dyslexia}
                                        onChange={(event) => handleCheckboxChange(event, setDyslexia)}/>}
                     label="Dyslexia"
+                    sx={{marginX: 1}}
                 />
 
                 <FormControlLabel
                     control={<Checkbox checked={isNativeEnglishSpeaker}
                                        onChange={(event) => handleCheckboxChange(event, setIsNativeEnglishSpeaker)}/>}
                     label="Native English Speaker"
+                    sx={{marginX: 1}}
                 />
 
-                <FormControl fullWidth>
-                <InputLabel id="programming-experience-label">Programming Experience</InputLabel>
-                <Select
-                    labelId="programming-experience-label"
-                    id="programming-experience"
-                    value={programmingExperience}
-                    label="Programming Experience"
-                    onChange={handleProgrammingExperienceChange}
-                >
-                    <MenuItem value="beginner">Beginner</MenuItem>
-                    <MenuItem value="intermediate">Intermediate</MenuItem>
-                    <MenuItem value="advanced">Advanced</MenuItem>
-                </Select>
+                <FormControl sx={{margin: 2}}>
+                    <InputLabel id="programming-experience-label">Programming Experience Years</InputLabel>
+                    <Select
+                        labelId="programming-experience-label"
+                        id="programming-experience"
+                        value={programmingExperience}
+                        label="Programming Experience Years"
+                        onChange={handleProgrammingExperienceChange}
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4+</MenuItem>
+                    </Select>
                 </FormControl>
 
                 <Button
