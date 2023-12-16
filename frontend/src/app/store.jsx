@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import mainReducer from '../src/features/mainSlice'
+import experimentReducer from '../views/experiment/experimentSlice'
 
 export default configureStore({
     reducer: {
-        main: mainReducer,
+        main: experimentReducer,
     },
 })
