@@ -23,12 +23,17 @@ function App() {
     }
 
     return (<Stack justifyContent={"center"} sx={{
-        padding: 0,
-        [theme.breakpoints.up('md')]: {
+        padding: 0, [theme.breakpoints.up('md')]: {
             padding: 2,
         },
     }}>
-        <div style={{maxWidth: "min(100%, 800px)", margin: "auto"}}>
+        <div style={{
+            maxWidth: '100%',
+            overflowX: 'hidden',
+            display: 'flex',
+            alignContent: 'center',
+            justifyContent: 'center'
+        }}>
             {visibleView()}
         </div>
     </Stack>)

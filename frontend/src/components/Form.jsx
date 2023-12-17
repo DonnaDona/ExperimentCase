@@ -9,7 +9,7 @@ const leftAlignedStyle = {
     textAlign: 'start'
 };
 
-export default function Form() {
+export default function Form({onSubmit}) {
     const [age, setAge] = useState('');
     const [eyeIssues, setEyeIssues] = useState(false);
     const [dyslexia, setDyslexia] = useState(false);
@@ -24,6 +24,7 @@ export default function Form() {
         console.log("Native English Speaker: " + isEnglishSpeaker);
         console.log("Programming Experience: " + programmingExperience);
         console.log("Languages: " + languages);
+        onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, languages});
     }
 
     return (
