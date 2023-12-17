@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Button, Card, CardContent, Stack, Typography} from "@mui/material";
 
-export function Question({id, question, options, answer, format, onAnswerClick, showCorrect}) {
+export function Question({id, question, warmup, options, answer, format, onAnswerClick, showCorrect}) {
     const [startTime, setStartTime] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [correct, setCorrect] = useState(false);
@@ -28,6 +28,7 @@ export function Question({id, question, options, answer, format, onAnswerClick, 
 
         const answer_obj = {
             'qid': id,
+            'warmup': warmup,
             'answer': option,
             'answerIndex': option_idx,
             'correct': option === answer,
@@ -38,7 +39,7 @@ export function Question({id, question, options, answer, format, onAnswerClick, 
         onAnswerClick(answer_obj); // Notify the parent component about the answer click
     };
 
-    return (<Card sx={{padding: 4, borderRadius: 6}}>
+    return (<Card sx={{padding: 4, borderRadius: 6}} style={{width: 'min(600, 100%)'}}>
         <CardContent>
             <Typography variant="h3" sx={{fontWeight: "bold", marginBottom: 2}}>
                 {question}

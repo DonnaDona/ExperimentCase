@@ -14,17 +14,41 @@ export default function Form({onSubmit}) {
     const [eyeIssues, setEyeIssues] = useState(false);
     const [dyslexia, setDyslexia] = useState(false);
     const [isEnglishSpeaker, setIsEnglishSpeaker] = useState(false);
-    const [programmingExperience, setProgrammingExperience] = useState('');
+    const [programmingExperience, setProgrammingExperience] = useState(0);
     const [languages, setLanguages] = useState([]);
 
+    // error handling
+    const [ageError, setAgeError] = useState(false);
+    const [programmingExperienceError, setProgrammingExperienceError] = useState(false);
+
     const handleClick = () => {
-        console.log("Age: " + age);
-        console.log("Eye Issues: " + eyeIssues);
-        console.log("Dyslexia: " + dyslexia);
-        console.log("Native English Speaker: " + isEnglishSpeaker);
-        console.log("Programming Experience: " + programmingExperience);
-        console.log("Languages: " + languages);
+        if (age === '') {
+            setAgeError("Age is required");
+            return;
+        }
+        if (programmingExperience === '') {
+            setProgrammingExperienceError("Programming experience is required");
+            return;
+        }
         onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, languages});
+    }
+
+    const handleAgeChange = (event) => {
+        setAge(event.target.value);
+        if (event.target.value === '') {
+            setAgeError("Age is required");
+        } else {
+            setAgeError(false);
+        }
+    }
+
+    const handleProgrammingExperienceChange = (event) => {
+        setProgrammingExperience(event.target.value);
+        if (event.target.value === '') {
+            setProgrammingExperienceError("Programming experience is required");
+        } else {
+            setProgrammingExperienceError(false);
+        }
     }
 
     return (
@@ -32,13 +56,19 @@ export default function Form({onSubmit}) {
         <Stack width={'100%'} maxWidth={'350px'} sx={{gap: 1}}>
             <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
             <FormControl sx={leftAlignedStyle}>
-                <FormLabel component="legend">Age</FormLabel>
+                <FormLabel component="legend"
+                           error={ageError}>
+                    Age
+                </FormLabel>
                 <TextField
                     size={"small"}
                     type="number"
                     variant="outlined"
                     value={age}
-                    onChange={(event) => setAge(event.target.value)}
+                    required
+                    error={ageError}
+                    helperText={ageError}
+                    onChange={handleAgeChange}
                     InputLabelProps={{
                         shrink: true,
                     }}
@@ -63,18 +93,21 @@ export default function Form({onSubmit}) {
             <FormControlLabel
                 control={<Checkbox checked={isEnglishSpeaker}
                                    onChange={(event) => setIsEnglishSpeaker(event.target.checked)}/>}
-                label="Native English Speaker"
+                label="Fluent English Speaker"
             />
 
             <FormControl sx={leftAlignedStyle}>
-                <FormLabel component="legend">Programming Experience</FormLabel>
+                <FormLabel component="legend"
+                           error={programmingExperienceError}>
+                    Programming Experience</FormLabel>
                 <TextField
                     size={"small"}
                     type="number"
                     variant="outlined"
                     value={programmingExperience}
                     required
-                    onChange={(event) => setProgrammingExperience(event.target.value)}
+                    error={programmingExperienceError}
+                    onChange={handleProgrammingExperienceChange}
                     InputLabelProps={{
                         shrink: true,
                     }}
