@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {Alert, Button, Card, CardContent, Stack, Typography} from "@mui/material";
+import {Alert, Button, Card, CardContent, Stack, Typography, useTheme} from "@mui/material";
 
 export function Question({id, question, warmup, options, answer, format, onAnswerClick, showCorrect}) {
+    const theme = useTheme();
     const [startTime, setStartTime] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [correct, setCorrect] = useState(false);
@@ -39,9 +40,15 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
         onAnswerClick(answer_obj); // Notify the parent component about the answer click
     };
 
-    return (<Card sx={{padding: 4, borderRadius: 6}} style={{width: 'min(600, 100%)'}}>
+    return (<Card sx={{padding: 4, borderRadius: 6, width: '100%', boxSizing: 'border-box'}}>
         <CardContent>
-            <Typography variant="h3" sx={{fontWeight: "bold", marginBottom: 2}}>
+            {/*set smaller variant on mobile*/}
+            <Typography variant="h2"
+                        sx={{
+                            fontWeight: "bold", marginBottom: 2, [theme.breakpoints.down('sm')]: {
+                                fontSize: 32,
+                            }
+                        }}>
                 {question}
             </Typography>
 
@@ -53,6 +60,10 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
                     sx={{
                         marginTop: 3,
                         fontSize: 26,
+                        [theme.breakpoints.down('sm')]: {
+                            fontSize: 20,
+                        },
+                        
                         textTransform: "none",
                         borderRadius: 8,
                         backgroundColor: showCorrect ? (selectedOption === option && correct ? "lightGreen" : selectedOption === option ? "red" : "transparent") : "transparent",
