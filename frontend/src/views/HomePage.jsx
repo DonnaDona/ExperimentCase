@@ -45,7 +45,7 @@ export default function HomePage() {
     }
 
     return (
-        <Card sx={{padding: 5, width: 'min(600, 100%)'}}>
+        <Card sx={{padding: 5, width: 'min(600, 100%)', borderRadius: 6}}>
             <Typography variant="h2">Camel or Kebab case?</Typography>
             <Typography variant="h5" sx={{marginY: 2}}>
                 Choose the correct spelling for each format.

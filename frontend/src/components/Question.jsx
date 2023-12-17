@@ -33,11 +33,15 @@ export function Question({ question, options, answer }) {
     };
 
     return (
-        <Card sx={{ padding: 4 }}>
+        <Card sx={{ padding: 4, borderRadius: 6 }}>
             <CardContent>
-                <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 5 }}>
+                <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 2 }}>
                     {question}
                 </Typography>
+                <Typography variant="h4" sx={{ marginBottom: 5 }}>
+                    Click the correct spelling.
+                </Typography>
+
                 <Stack>
                     {options.map((option, index) => (
                         <Button
@@ -48,6 +52,7 @@ export function Question({ question, options, answer }) {
                                 marginTop: 3,
                                 fontSize: 26,
                                 textTransform: "none",
+                                borderRadius: 8,
                                 backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
                                 color: selectedOption === option ? "white" : "black",
                             }}
@@ -62,6 +67,7 @@ export function Question({ question, options, answer }) {
                 </Stack>
             </CardContent>
             {correct && <Alert severity="success">Correct!</Alert>}
+            {selectedOption !== null && !correct && <Alert severity="error">Incorrect!</Alert>}
         </Card>
     );
 }
