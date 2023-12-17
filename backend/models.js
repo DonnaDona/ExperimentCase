@@ -17,7 +17,7 @@ const formSchema = new mongoose.Schema({
     programmingExperience: {type: Number, required: true, min: 0, max: 50},
     languages: {
         type: [String],
-        enum: ['C', 'C++', 'C#', 'CSS', 'HTML', 'Java', 'JavaScript', 'PHP', 'Python', 'Rust', 'Other'],
+        enum: ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'],
         default: [],
     },
 });

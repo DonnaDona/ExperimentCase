@@ -1,9 +1,21 @@
 import React, {useState} from "react";
 import {
-    Button, Card, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography,
+    Button,
+    Card,
+    Checkbox,
+    FormControl,
+    FormControlLabel,
+    InputLabel,
+    MenuItem,
+    Select,
+    Stack,
+    TextField,
+    Typography,
+    useTheme,
 } from "@mui/material";
 import {setPersonData, startExperiment} from "./experiment/experimentSlice.jsx";
 import {useDispatch} from "react-redux";
+import Form from "../components/Form.jsx";
 
 export default function HomePage() {
     const [age, setAge] = useState('');
@@ -11,6 +23,7 @@ export default function HomePage() {
     const [dyslexia, setDyslexia] = useState(false);
     const [isNativeEnglishSpeaker, setIsNativeEnglishSpeaker] = useState(false);
     const [programmingExperience, setProgrammingExperience] = useState(0);
+    const theme = useTheme();
 
     const dispatch = useDispatch();
 
@@ -34,7 +47,16 @@ export default function HomePage() {
         dispatch(startExperiment());
     }
 
-    return (<Card sx={{padding: 5, width: 'min(600, 100%)', borderRadius: 6}}>
+    return (<Card 
+        sx={{
+            borderRadius: 0,
+            padding: 2,
+            [theme.breakpoints.up('md')]: {
+                borderRadius: 6,
+                padding: 5,
+            },
+            width: 'min(600, 100%)', 
+            }}>
         <Typography variant="h2">Camel or Kebab case?</Typography>
         <Typography variant="h5" sx={{marginY: 2}}>
             Choose the correct spelling for each format.
@@ -48,63 +70,9 @@ export default function HomePage() {
 
         <hr/>
 
-        <Stack>
-            <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
-            <FormControl sx={{margin: 2}}>
-                <TextField
-                    type="date"
-                    label="Date of Birth"
-                    variant="outlined"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}/>
-            </FormControl>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', paddingLeft: 8, paddingRight: 8}}>
+            <Form/>
+        </div>
 
-            <FormControlLabel
-                control={<Checkbox checked={eyeIssues}
-                                   onChange={(event) => handleCheckboxChange(event, setEyeIssues)}/>}
-                label="Eye Issues"
-                sx={{marginX: 1}}
-            />
-
-            <FormControlLabel
-                control={<Checkbox checked={dyslexia}
-                                   onChange={(event) => handleCheckboxChange(event, setDyslexia)}/>}
-                label="Dyslexia"
-                sx={{marginX: 1}}
-            />
-
-            <FormControlLabel
-                control={<Checkbox checked={isNativeEnglishSpeaker}
-                                   onChange={(event) => handleCheckboxChange(event, setIsNativeEnglishSpeaker)}/>}
-                label="Native English Speaker"
-                sx={{marginX: 1}}
-            />
-
-            <FormControl sx={{margin: 2}}>
-                <InputLabel id="programming-experience-label">Programming Experience Years</InputLabel>
-                <Select
-                    labelId="programming-experience-label"
-                    id="programming-experience"
-                    value={programmingExperience}
-                    label="Programming Experience Years"
-                    onChange={handleProgrammingExperienceChange}
-                >
-                    <MenuItem value={0}>0</MenuItem>
-                    <MenuItem value={1}>1</MenuItem>
-                    <MenuItem value={2}>2</MenuItem>
-                    <MenuItem value={3}>3</MenuItem>
-                    <MenuItem value={4}>4+</MenuItem>
-                </Select>
-            </FormControl>
-
-            <Button
-                variant="contained"
-                sx={{marginY: 2}}
-                onClick={handleClick}
-            >
-                Start
-            </Button>
-        </Stack>
     </Card>);
 }
