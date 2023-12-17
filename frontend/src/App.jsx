@@ -2,12 +2,14 @@ import './App.css'
 import HomePage from "./views/HomePage.jsx";
 import QuestionsPage from "./views/QuestionsPage.jsx";
 import {useSelector} from "react-redux";
-import {selectIsRunning, selectIsNotStarted} from "./views/experiment/experimentSlice.jsx";
+import {selectIsDemo, selectIsRunning, selectIsNotStarted} from "./views/experiment/experimentSlice.jsx";
 import {Stack, useTheme} from "@mui/material";
 import Finished from "./views/Finished.jsx";
 
-function App() {
+import {questions, demo} from "./questions.js";
 
+function App() {
+    const isDemo = useSelector(selectIsDemo);
     const isRunning = useSelector(selectIsRunning);
     const isNotStarted = useSelector(selectIsNotStarted);
     const theme = useTheme();
@@ -15,8 +17,10 @@ function App() {
     const visibleView = () => {
         if (isNotStarted) {
             return (<HomePage/>);
+        } else if (isDemo) {
+            return (<QuestionsPage questions={demo} demo={true}/>);
         } else if (isRunning) {
-            return (<QuestionsPage/>);
+            return (<QuestionsPage questions={questions}/>);
         } else {
             return (<Finished/>);
         }
@@ -28,11 +32,7 @@ function App() {
         },
     }}>
         <div style={{
-            maxWidth: '100%',
-            overflowX: 'hidden',
-            display: 'flex',
-            alignContent: 'center',
-            justifyContent: 'center'
+            maxWidth: '100%', overflowX: 'hidden', display: 'flex', alignContent: 'center', justifyContent: 'center'
         }}>
             {visibleView()}
         </div>

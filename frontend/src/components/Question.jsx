@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Button, Card, CardContent, Stack, Typography} from "@mui/material";
 
-export function Question({id, question, options, answer, format, onAnswerClick}) {
+export function Question({id, question, options, answer, format, onAnswerClick, showCorrect}) {
     const [startTime, setStartTime] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [correct, setCorrect] = useState(false);
@@ -50,8 +50,11 @@ export function Question({id, question, options, answer, format, onAnswerClick})
                     variant="outlined"
                     size="large"
                     sx={{
-                        marginTop: 3, fontSize: 26, textTransform: "none", borderRadius: 8, // backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
-                        // color: selectedOption === option ? "white" : "black",
+                        marginTop: 3,
+                        fontSize: 26,
+                        textTransform: "none",
+                        borderRadius: 8,
+                        backgroundColor: showCorrect ? (selectedOption === option && correct ? "lightGreen" : selectedOption === option ? "red" : "transparent") : "transparent",
                     }}
                     onClick={() => {
                         handleOptionClick(option, index);
@@ -62,7 +65,7 @@ export function Question({id, question, options, answer, format, onAnswerClick})
                 </Button>))}
             </Stack>
         </CardContent>
-        {/*{correct && <Alert severity="success">Correct!</Alert>}*/}
-        {/*{selectedOption !== null && !correct && (<Alert severity="error">Incorrect!</Alert>)}*/}
+        {/*{showCorrect && correct && <Alert severity="success">Correct!</Alert>}*/}
+        {/*{showCorrect && selectedOption !== null && !correct && (<Alert severity="error">Incorrect!</Alert>)}*/}
     </Card>);
 }
