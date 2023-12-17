@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import axios from 'axios';
 
 export const experimentSlice = createSlice({
     name: 'experiment', initialState: {
@@ -17,7 +18,17 @@ export const experimentSlice = createSlice({
             state.phase = 1;
         }, finishExperiment: (state) => {
             state.phase = 2;
+            experimentSlice.caseReducers.sendData(state);
             console.log("Experiment finished");
+        }, sendData: (state) => {
+            console.log("Sending data to backend...");
+            const experiment = {
+                'form': state.personData, 'answers': state.answers,
+            };
+            axios.post('http://localhost:5000/api/experiments', experiment).then(res => {
+                console.log(res);
+                console.log(res.data);
+            });
         }, addAnswer: (state, action) => {
             state.answers.push(action.payload);
         },

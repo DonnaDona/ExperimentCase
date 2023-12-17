@@ -27,7 +27,7 @@ export function Question({id, question, options, answer, format, onAnswerClick})
         setSelectedOption(option);
 
         const answer_obj = {
-            'question': question,
+            'qid': id,
             'answer': option,
             'answerIndex': option_idx,
             'correct': option === answer,
