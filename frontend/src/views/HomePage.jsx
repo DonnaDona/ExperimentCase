@@ -35,76 +35,76 @@ export default function HomePage() {
     }
 
     return (<Card sx={{padding: 5, width: 'min(600, 100%)', borderRadius: 6}}>
-            <Typography variant="h2">Camel or Kebab case?</Typography>
-            <Typography variant="h5" sx={{marginY: 2}}>
-                Choose the correct spelling for each format.
-            </Typography>
+        <Typography variant="h2">Camel or Kebab case?</Typography>
+        <Typography variant="h5" sx={{marginY: 2}}>
+            Choose the correct spelling for each format.
+        </Typography>
 
-            <Typography variant="h6" sx={{marginY: 2}}>For example:</Typography>
-            <Typography variant="body1" sx={{marginY: 2}}>
-                "peter parker" would be written as "peterParker" in camel case and "peter-parker" in kebab case.
-            </Typography>
+        <Typography variant="h6" sx={{marginY: 2}}>For example:</Typography>
+        <Typography variant="body1" sx={{marginY: 2}}>
+            "peter parker" would be written as "peterParker" in camel case and "peter-parker" in kebab case.
+        </Typography>
 
 
-            <hr/>
+        <hr/>
 
-            <Stack>
-                <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
-                <FormControl sx={{margin: 2}}>
-                    <TextField
-                        type="date"
-                        label="Date of Birth"
-                        variant="outlined"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}/>
-                </FormControl>
+        <Stack>
+            <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
+            <FormControl sx={{margin: 2}}>
+                <TextField
+                    type="date"
+                    label="Date of Birth"
+                    variant="outlined"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}/>
+            </FormControl>
 
-                <FormControlLabel
-                    control={<Checkbox checked={eyeIssues}
-                                       onChange={(event) => handleCheckboxChange(event, setEyeIssues)}/>}
-                    label="Eye Issues"
-                    sx={{marginX: 1}}
-                />
+            <FormControlLabel
+                control={<Checkbox checked={eyeIssues}
+                                   onChange={(event) => handleCheckboxChange(event, setEyeIssues)}/>}
+                label="Eye Issues"
+                sx={{marginX: 1}}
+            />
 
-                <FormControlLabel
-                    control={<Checkbox checked={dyslexia}
-                                       onChange={(event) => handleCheckboxChange(event, setDyslexia)}/>}
-                    label="Dyslexia"
-                    sx={{marginX: 1}}
-                />
+            <FormControlLabel
+                control={<Checkbox checked={dyslexia}
+                                   onChange={(event) => handleCheckboxChange(event, setDyslexia)}/>}
+                label="Dyslexia"
+                sx={{marginX: 1}}
+            />
 
-                <FormControlLabel
-                    control={<Checkbox checked={isNativeEnglishSpeaker}
-                                       onChange={(event) => handleCheckboxChange(event, setIsNativeEnglishSpeaker)}/>}
-                    label="Native English Speaker"
-                    sx={{marginX: 1}}
-                />
+            <FormControlLabel
+                control={<Checkbox checked={isNativeEnglishSpeaker}
+                                   onChange={(event) => handleCheckboxChange(event, setIsNativeEnglishSpeaker)}/>}
+                label="Native English Speaker"
+                sx={{marginX: 1}}
+            />
 
-                <FormControl sx={{margin: 2}}>
-                    <InputLabel id="programming-experience-label">Programming Experience Years</InputLabel>
-                    <Select
-                        labelId="programming-experience-label"
-                        id="programming-experience"
-                        value={programmingExperience}
-                        label="Programming Experience Years"
-                        onChange={handleProgrammingExperienceChange}
-                    >
-                        <MenuItem value={0}>0</MenuItem>
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4+</MenuItem>
-                    </Select>
-                </FormControl>
-
-                <Button
-                    variant="contained"
-                    sx={{marginY: 2}}
-                    onClick={handleClick}
+            <FormControl sx={{margin: 2}}>
+                <InputLabel id="programming-experience-label">Programming Experience Years</InputLabel>
+                <Select
+                    labelId="programming-experience-label"
+                    id="programming-experience"
+                    value={programmingExperience}
+                    label="Programming Experience Years"
+                    onChange={handleProgrammingExperienceChange}
                 >
-                    Start
-                </Button>
-            </Stack>
-        </Card>);
+                    <MenuItem value={0}>0</MenuItem>
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4+</MenuItem>
+                </Select>
+            </FormControl>
+
+            <Button
+                variant="contained"
+                sx={{marginY: 2}}
+                onClick={handleClick}
+            >
+                Start
+            </Button>
+        </Stack>
+    </Card>);
 }

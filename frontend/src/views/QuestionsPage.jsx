@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Question} from "../components/Question";
 import questionsData from "../../../generator/questions.json";
 import {LinearProgress, Stack} from "@mui/material";
-import {finishExperiment} from "./experiment/experimentSlice.jsx";
+import {finishExperiment, addAnswer} from "./experiment/experimentSlice.jsx";
 
 // questions are sorted for randomness (?) tbd
 //questions.sort(() => Math.random() - 0.5);
@@ -18,6 +18,7 @@ export default function QuestionsPage() {
 
     const handleAnswerClick = (answer) => {
         setTimeout(() => {
+            dispatch(addAnswer(answer));
             if (questionIdx + 1 === numQuestions) {
                 dispatch(finishExperiment());
                 return;

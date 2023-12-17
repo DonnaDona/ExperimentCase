@@ -9,7 +9,7 @@ export const experimentSlice = createSlice({
             'dyslexia': false,
             'isNativeEnglishSpeaker': false,
             'programmingExperience': 0,
-        },
+        }, answers: [],
     }, reducers: {
         setPersonData: (state, action) => {
             state.personData = action.payload
@@ -18,11 +18,13 @@ export const experimentSlice = createSlice({
         }, finishExperiment: (state) => {
             state.phase = 2;
             console.log("Experiment finished");
+        }, addAnswer: (state, action) => {
+            state.answers.push(action.payload);
         },
     },
 })
 
-export const {setPersonData, startExperiment, finishExperiment} = experimentSlice.actions
+export const {addAnswer, setPersonData, startExperiment, finishExperiment} = experimentSlice.actions
 
 export const selectIsNotStarted = (state) => state.experiment.phase === 0
 export const selectIsRunning = (state) => state.experiment.phase === 1
