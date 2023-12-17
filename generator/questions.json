@@ -2,336 +2,60 @@
     "warmup": [
         {
             "id": "0-0",
-            "question": "married game",
+            "question": "game employment",
             "options": [
-                "marriage-camera",
-                "married-game",
-                "mature-same",
-                "mixed-shame"
+                "lame-monumental",
+                "game-employment",
+                "blame-employer",
+                "name-equipment"
             ],
             "format": "kebab-case",
-            "answer": "married-game"
+            "answer": "game-employment"
         },
         {
             "id": "0-2",
-            "question": "married game",
+            "question": "game employment",
             "options": [
-                "married game",
-                "worried grave",
-                "scared frame",
-                "mixed camera"
+                "game employment",
+                "tame development",
+                "camera replacement",
+                "name monumental"
             ],
             "format": "space",
-            "answer": "married game"
+            "answer": "game employment"
         },
         {
             "id": "0-1",
-            "question": "married game",
+            "question": "game employment",
             "options": [
-                "mixedName",
-                "marriedGame",
-                "surprisedSample",
-                "embarrassedCamera"
+                "nameImplement",
+                "gameEmployment",
+                "graveDepartment",
+                "gateMonumental"
             ],
             "format": "camelCase",
-            "answer": "marriedGame"
+            "answer": "gameEmployment"
         }
     ],
     "questions": [
         {
-            "id": "4-0",
-            "question": "immaterial hurry",
-            "options": [
-                "international-jury",
-                "immaterial-hurry",
-                "international-husky",
-                "matter-curly"
-            ],
-            "format": "kebab-case",
-            "answer": "immaterial-hurry"
-        },
-        {
-            "id": "2-0",
-            "question": "past supportive",
-            "options": [
-                "past-supportive",
-                "east-productive",
-                "hasty-sore",
-                "fast-positive"
-            ],
-            "format": "kebab-case",
-            "answer": "past-supportive"
-        },
-        {
-            "id": "4-2",
-            "question": "immaterial hurry",
-            "options": [
-                "equatorial hairy",
-                "immaterial hurry",
-                "shimmering curvy",
-                "impartial hungry"
-            ],
-            "format": "space",
-            "answer": "immaterial hurry"
-        },
-        {
-            "id": "7-2",
-            "question": "muddy insurance",
-            "options": [
-                "murky distance",
-                "muddy insurance",
-                "mushy strange",
-                "cloudy source"
-            ],
-            "format": "space",
-            "answer": "muddy insurance"
-        },
-        {
-            "id": "8-0",
-            "question": "expert ordinary",
-            "options": [
-                "expert-original",
-                "expert-ordinary",
-                "beer-worry",
-                "repeat-original"
-            ],
-            "format": "kebab-case",
-            "answer": "expert-ordinary"
-        },
-        {
-            "id": "5-2",
-            "question": "fail button",
-            "options": [
-                "fail button",
-                "frail station",
-                "film buttery",
-                "faint burn"
-            ],
-            "format": "space",
-            "answer": "fail button"
-        },
-        {
-            "id": "2-2",
-            "question": "past supportive",
-            "options": [
-                "past supportive",
-                "fast positive",
-                "past instructive",
-                "part sore"
-            ],
-            "format": "space",
-            "answer": "past supportive"
-        },
-        {
-            "id": "7-0",
-            "question": "muddy insurance",
-            "options": [
-                "mushy-instructive",
-                "muddy-insurance",
-                "deadly-sane",
-                "buddy-finance"
-            ],
-            "format": "kebab-case",
-            "answer": "muddy-insurance"
-        },
-        {
-            "id": "8-2",
-            "question": "expert ordinary",
-            "options": [
-                "beer orderly",
-                "expert ordinary",
-                "poet ordinary",
-                "experience original"
-            ],
-            "format": "space",
-            "answer": "expert ordinary"
-        },
-        {
-            "id": "9-2",
-            "question": "tough blaring",
-            "options": [
-                "thorough warning",
-                "tough blaring",
-                "thoughtful alarming",
-                "rough hearing"
-            ],
-            "format": "space",
-            "answer": "tough blaring"
-        },
-        {
-            "id": "9-1",
-            "question": "tough blaring",
-            "options": [
-                "roughDaring",
-                "toughBlaring",
-                "thoroughLasting",
-                "thoughtHearing"
-            ],
-            "format": "camelCase",
-            "answer": "toughBlaring"
-        },
-        {
-            "id": "1-0",
-            "question": "unsung hearty",
-            "options": [
-                "unsung-hearty",
-                "crushing-hefty",
-                "song-early",
-                "housing-chart"
-            ],
-            "format": "kebab-case",
-            "answer": "unsung-hearty"
-        },
-        {
-            "id": "1-2",
-            "question": "unsung hearty",
-            "options": [
-                "unsung hearty",
-                "funny hairy",
-                "smug heat",
-                "crushing chart"
-            ],
-            "format": "space",
-            "answer": "unsung hearty"
-        },
-        {
-            "id": "5-0",
-            "question": "fail button",
-            "options": [
-                "fail-button",
-                "family-tone",
-                "failing-buttery",
-                "agile-bony"
-            ],
-            "format": "kebab-case",
-            "answer": "fail-button"
-        },
-        {
             "id": "6-1",
-            "question": "board doctor",
+            "question": "previous career",
             "options": [
-                "boardDoctor",
-                "aridTorn",
-                "bareMediocre",
-                "broadEditor"
+                "obviousCamera",
+                "profuseCancer",
+                "previousCareer",
+                "preciousCheery"
             ],
             "format": "camelCase",
-            "answer": "boardDoctor"
-        },
-        {
-            "id": "9-0",
-            "question": "tough blaring",
-            "options": [
-                "thorough-leading",
-                "tough-blaring",
-                "tooth-ring",
-                "young-boiling"
-            ],
-            "format": "kebab-case",
-            "answer": "tough-blaring"
-        },
-        {
-            "id": "3-1",
-            "question": "selfish light",
-            "options": [
-                "specialistDelightful",
-                "selfishLight",
-                "foolishFight",
-                "slightSlight"
-            ],
-            "format": "camelCase",
-            "answer": "selfishLight"
-        },
-        {
-            "id": "4-1",
-            "question": "immaterial hurry",
-            "options": [
-                "impartialCurrency",
-                "immaterialHurry",
-                "internationalCurly",
-                "shimmeringSurgery"
-            ],
-            "format": "camelCase",
-            "answer": "immaterialHurry"
-        },
-        {
-            "id": "7-1",
-            "question": "muddy insurance",
-            "options": [
-                "mudSubstance",
-                "muddyInsurance",
-                "studyInsecure",
-                "cloudyFinance"
-            ],
-            "format": "camelCase",
-            "answer": "muddyInsurance"
-        },
-        {
-            "id": "3-2",
-            "question": "selfish light",
-            "options": [
-                "series light",
-                "selfish light",
-                "unselfish bright",
-                "slushy high"
-            ],
-            "format": "space",
-            "answer": "selfish light"
-        },
-        {
-            "id": "2-1",
-            "question": "past supportive",
-            "options": [
-                "pastSupportive",
-                "hastyProductive",
-                "vastDescriptive",
-                "pathSupport"
-            ],
-            "format": "camelCase",
-            "answer": "pastSupportive"
-        },
-        {
-            "id": "6-0",
-            "question": "board doctor",
-            "options": [
-                "board-doctor",
-                "bold-actor",
-                "broad-editor",
-                "road-director"
-            ],
-            "format": "kebab-case",
-            "answer": "board-doctor"
-        },
-        {
-            "id": "1-1",
-            "question": "unsung hearty",
-            "options": [
-                "unsungHearty",
-                "amusingCharity",
-                "trustingHeart",
-                "singHeavy"
-            ],
-            "format": "camelCase",
-            "answer": "unsungHearty"
-        },
-        {
-            "id": "0-0",
-            "question": "form touch",
-            "options": [
-                "form-touch",
-                "frame-thorough",
-                "farm-tough",
-                "informal-youth"
-            ],
-            "format": "kebab-case",
-            "answer": "form-touch"
+            "answer": "previousCareer"
         },
         {
             "id": "8-1",
             "question": "expert ordinary",
             "options": [
-                "examplePrimary",
                 "expertOrdinary",
+                "examplePrimary",
                 "reportCorny",
                 "expertDirty"
             ],
@@ -339,64 +63,340 @@
             "answer": "expertOrdinary"
         },
         {
-            "id": "6-2",
-            "question": "board doctor",
+            "id": "5-0",
+            "question": "support limit",
             "options": [
-                "board doctor",
-                "border poor",
-                "bad editor",
-                "bird factor"
+                "spirit-impolite",
+                "sort-limping",
+                "support-limit",
+                "spot-list"
             ],
-            "format": "space",
-            "answer": "board doctor"
-        },
-        {
-            "id": "0-1",
-            "question": "form touch",
-            "options": [
-                "formTouch",
-                "farmTour",
-                "formalYouth",
-                "firmTough"
-            ],
-            "format": "camelCase",
-            "answer": "formTouch"
+            "format": "kebab-case",
+            "answer": "support-limit"
         },
         {
             "id": "3-0",
-            "question": "selfish light",
+            "question": "thing stick",
             "options": [
-                "slushy-flight",
-                "selfish-light",
-                "slight-bright",
-                "finish-light"
+                "anything-sick",
+                "teeming-stock",
+                "fitting-trick",
+                "thing-stick"
             ],
             "format": "kebab-case",
-            "answer": "selfish-light"
+            "answer": "thing-stick"
+        },
+        {
+            "id": "7-0",
+            "question": "muddy insurance",
+            "options": [
+                "giddy-instructive",
+                "study-sane",
+                "buddy-finance",
+                "muddy-insurance"
+            ],
+            "format": "kebab-case",
+            "answer": "muddy-insurance"
+        },
+        {
+            "id": "3-2",
+            "question": "thing stick",
+            "options": [
+                "thin plastic",
+                "anything trick",
+                "string strike",
+                "thing stick"
+            ],
+            "format": "space",
+            "answer": "thing stick"
         },
         {
             "id": "5-1",
-            "question": "fail button",
+            "question": "support limit",
             "options": [
-                "failButton",
-                "filmTorn",
-                "nailTone",
-                "failingStation"
+                "sportLight",
+                "supportiveLimited",
+                "supportLimit",
+                "upperImpolite"
             ],
             "format": "camelCase",
-            "answer": "failButton"
+            "answer": "supportLimit"
+        },
+        {
+            "id": "6-0",
+            "question": "previous career",
+            "options": [
+                "serious-scarce",
+                "glorious-creepy",
+                "previous-career",
+                "gracious-careless"
+            ],
+            "format": "kebab-case",
+            "answer": "previous-career"
+        },
+        {
+            "id": "7-1",
+            "question": "muddy insurance",
+            "options": [
+                "mudSubstance",
+                "studyInsecure",
+                "cloudyFinance",
+                "muddyInsurance"
+            ],
+            "format": "camelCase",
+            "answer": "muddyInsurance"
+        },
+        {
+            "id": "4-2",
+            "question": "tremendous filthy",
+            "options": [
+                "extraneous city",
+                "tremendous filthy",
+                "recommendation oily",
+                "outrageous flashy"
+            ],
+            "format": "space",
+            "answer": "tremendous filthy"
         },
         {
             "id": "0-2",
-            "question": "form touch",
+            "question": "pitch window",
             "options": [
-                "form touch",
-                "farm tooth",
-                "informal thorough",
-                "floor tour"
+                "price mind",
+                "spicy win",
+                "topic wild",
+                "pitch window"
             ],
             "format": "space",
-            "answer": "form touch"
+            "answer": "pitch window"
+        },
+        {
+            "id": "1-1",
+            "question": "juvenile crazy",
+            "options": [
+                "juniorCrazy",
+                "juvenileCrazy",
+                "juiceCreamy",
+                "edibleScratchy"
+            ],
+            "format": "camelCase",
+            "answer": "juvenileCrazy"
+        },
+        {
+            "id": "2-2",
+            "question": "belt major",
+            "options": [
+                "belt major",
+                "health minor",
+                "best mature",
+                "beat major"
+            ],
+            "format": "space",
+            "answer": "belt major"
+        },
+        {
+            "id": "8-2",
+            "question": "expert ordinary",
+            "options": [
+                "expert ordinary",
+                "beer orderly",
+                "poet ordinary",
+                "experience original"
+            ],
+            "format": "space",
+            "answer": "expert ordinary"
+        },
+        {
+            "id": "0-0",
+            "question": "pitch window",
+            "options": [
+                "spicy-windy",
+                "point-wine",
+                "rich-kind",
+                "pitch-window"
+            ],
+            "format": "kebab-case",
+            "answer": "pitch-window"
+        },
+        {
+            "id": "9-1",
+            "question": "tough blaring",
+            "options": [
+                "toughBlaring",
+                "thoughtfulBoiling",
+                "thoughtDaring",
+                "roughCaring"
+            ],
+            "format": "camelCase",
+            "answer": "toughBlaring"
+        },
+        {
+            "id": "0-1",
+            "question": "pitch window",
+            "options": [
+                "politicsWin",
+                "depthWide",
+                "switchWild",
+                "pitchWindow"
+            ],
+            "format": "camelCase",
+            "answer": "pitchWindow"
+        },
+        {
+            "id": "2-0",
+            "question": "belt major",
+            "options": [
+                "belt-major",
+                "svelte-meager",
+                "health-mature",
+                "best-actor"
+            ],
+            "format": "kebab-case",
+            "answer": "belt-major"
+        },
+        {
+            "id": "6-2",
+            "question": "previous career",
+            "options": [
+                "gregarious scared",
+                "precious cheery",
+                "previous career",
+                "vicious coarse"
+            ],
+            "format": "space",
+            "answer": "previous career"
+        },
+        {
+            "id": "1-0",
+            "question": "juvenile crazy",
+            "options": [
+                "vehicle-creamy",
+                "juvenile-crazy",
+                "svelte-gray",
+                "gentle-scaly"
+            ],
+            "format": "kebab-case",
+            "answer": "juvenile-crazy"
+        },
+        {
+            "id": "5-2",
+            "question": "support limit",
+            "options": [
+                "portly impolite",
+                "pot misty",
+                "support limit",
+                "resort limping"
+            ],
+            "format": "space",
+            "answer": "support limit"
+        },
+        {
+            "id": "1-2",
+            "question": "juvenile crazy",
+            "options": [
+                "uncle creamy",
+                "juvenile crazy",
+                "nimble curly",
+                "jovial scratchy"
+            ],
+            "format": "space",
+            "answer": "juvenile crazy"
+        },
+        {
+            "id": "8-0",
+            "question": "expert ordinary",
+            "options": [
+                "expert-ordinary",
+                "expert-original",
+                "beer-worry",
+                "repeat-original"
+            ],
+            "format": "kebab-case",
+            "answer": "expert-ordinary"
+        },
+        {
+            "id": "3-1",
+            "question": "thing stick",
+            "options": [
+                "thinStrict",
+                "teemingSticky",
+                "writhingElastic",
+                "thingStick"
+            ],
+            "format": "camelCase",
+            "answer": "thingStick"
+        },
+        {
+            "id": "4-0",
+            "question": "tremendous filthy",
+            "options": [
+                "tedious-difficulty",
+                "tremendous-filthy",
+                "extreme-ability",
+                "thunderous-healthy"
+            ],
+            "format": "kebab-case",
+            "answer": "tremendous-filthy"
+        },
+        {
+            "id": "7-2",
+            "question": "muddy insurance",
+            "options": [
+                "murky distance",
+                "mushy strange",
+                "cloudy source",
+                "muddy insurance"
+            ],
+            "format": "space",
+            "answer": "muddy insurance"
+        },
+        {
+            "id": "2-1",
+            "question": "belt major",
+            "options": [
+                "beltMajor",
+                "betAjar",
+                "resultMeager",
+                "bestMoral"
+            ],
+            "format": "camelCase",
+            "answer": "beltMajor"
+        },
+        {
+            "id": "9-2",
+            "question": "tough blaring",
+            "options": [
+                "tough blaring",
+                "youth leading",
+                "tooth boiling",
+                "tour parking"
+            ],
+            "format": "space",
+            "answer": "tough blaring"
+        },
+        {
+            "id": "4-1",
+            "question": "tremendous filthy",
+            "options": [
+                "harmoniousFlat",
+                "tremendousFilthy",
+                "recommendationGuilty",
+                "tediousAbility"
+            ],
+            "format": "camelCase",
+            "answer": "tremendousFilthy"
+        },
+        {
+            "id": "9-0",
+            "question": "tough blaring",
+            "options": [
+                "tough-blaring",
+                "tooth-boring",
+                "thoughtful-darling",
+                "rough-daring"
+            ],
+            "format": "kebab-case",
+            "answer": "tough-blaring"
         }
     ]
 }

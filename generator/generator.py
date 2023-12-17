@@ -32,13 +32,29 @@ def generate_options(words_list, words, format):
     return [format_words(option, format) for option in options]
 
 
+def generate_right_answers_position(num_questions: int):
+    positions = []
+    quarter = num_questions // 4
+    for i in range(4):
+        for _ in range(quarter):
+            positions.append(i)
+
+    remaining = num_questions - len(positions)
+    for _ in range(remaining):
+        positions.append(random.randint(0, 3))
+
+    random.shuffle(positions)
+    return positions
+
+
 def generate_questions(words_list, words_per_question: int, num: int, answers_same_order=True):
     questions = []
+    right_answers_position = generate_right_answers_position(num)
     for i in range(num):
         words = extract_words(words_list, words_per_question)
 
         # make sure that
-        right_answer_position = random.randint(0, words_per_question - 1)
+        right_answer_position = right_answers_position[i]
         for j, format in enumerate(OPTIONS_FORMAT):
             question_obj = {"id": f"{i}-{j}", "question": format_words(words, "space"), "options": [], "format": format,
                             "answer": format_words(words, format)}
