@@ -1,9 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 export const experimentSlice = createSlice({
-    name: 'experiment',
-    initialState: {
-        showQuestions: false,
+    name: 'experiment', initialState: {
+        phase: 0, // 0: not started, 1: started, 2: finished
         personData: {
             'age': 0,
             'eyeIssues': false,
@@ -11,19 +10,21 @@ export const experimentSlice = createSlice({
             'isNativeEnglishSpeaker': false,
             'programmingExperience': 0,
         },
-    },
-    reducers: {
-        setShowQuestions: (state, action) => {
-            state.showQuestions = action.payload
-        },
+    }, reducers: {
         setPersonData: (state, action) => {
             state.personData = action.payload
-        }
+        }, startExperiment: (state) => {
+            state.phase = 1;
+        }, finishExperiment: (state) => {
+            state.phase = 2;
+            console.log("Experiment finished");
+        },
     },
 })
 
-export const {setShowQuestions, setPersonData} = experimentSlice.actions
+export const {setPersonData, startExperiment, finishExperiment} = experimentSlice.actions
 
-export const selectShowQuestions = state => state.main.showQuestions
+export const selectIsNotStarted = (state) => state.experiment.phase === 0
+export const selectIsRunning = (state) => state.experiment.phase === 1
 
 export default experimentSlice.reducer

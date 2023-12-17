@@ -3,11 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {Question} from "../components/Question";
 import questionsData from "../../../generator/questions.json";
 import {LinearProgress, Stack} from "@mui/material";
+import {finishExperiment} from "./experiment/experimentSlice.jsx";
 
 // questions are sorted for randomness (?) tbd
 //questions.sort(() => Math.random() - 0.5);
 const questions = [...questionsData["warmup"], ...questionsData["questions"]];
-console.log(questions);
+const numQuestions = questions.length;
 
 const getQuestion = (idx) => questions[idx];
 
@@ -17,6 +18,10 @@ export default function QuestionsPage() {
 
     const handleAnswerClick = (answer) => {
         setTimeout(() => {
+            if (questionIdx + 1 === numQuestions) {
+                dispatch(finishExperiment());
+                return;
+            }
             setQuestionIdx(questionIdx + 1);
         }, 500);
     };

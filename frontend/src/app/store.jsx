@@ -3,6 +3,6 @@ import experimentReducer from '../views/experiment/experimentSlice'
 
 export default configureStore({
     reducer: {
-        main: experimentReducer,
+        experiment: experimentReducer,
     },
 })

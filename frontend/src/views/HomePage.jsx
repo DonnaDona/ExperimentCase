@@ -1,18 +1,8 @@
 import React, {useState} from "react";
 import {
-    Button,
-    Card,
-    Checkbox,
-    FormControl,
-    FormControlLabel,
-    InputLabel,
-    MenuItem,
-    Select,
-    Stack,
-    TextField,
-    Typography,
+    Button, Card, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, Stack, TextField, Typography,
 } from "@mui/material";
-import {setPersonData, setShowQuestions} from "./experiment/experimentSlice.jsx";
+import {setPersonData, startExperiment} from "./experiment/experimentSlice.jsx";
 import {useDispatch} from "react-redux";
 
 export default function HomePage() {
@@ -41,11 +31,10 @@ export default function HomePage() {
 
         dispatch(setPersonData({age, eyeIssues, dyslexia, isNativeEnglishSpeaker, programmingExperience}));
 
-        dispatch(setShowQuestions(true));
+        dispatch(startExperiment());
     }
 
-    return (
-        <Card sx={{padding: 5, width: 'min(600, 100%)', borderRadius: 6}}>
+    return (<Card sx={{padding: 5, width: 'min(600, 100%)', borderRadius: 6}}>
             <Typography variant="h2">Camel or Kebab case?</Typography>
             <Typography variant="h5" sx={{marginY: 2}}>
                 Choose the correct spelling for each format.
@@ -117,6 +106,5 @@ export default function HomePage() {
                     Start
                 </Button>
             </Stack>
-        </Card>
-    );
+        </Card>);
 }
