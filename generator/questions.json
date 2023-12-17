@@ -1,0 +1,114 @@
+{
+    "warmup": [
+        {
+            "id": "1-0",
+            "question": "thanks basis",
+            "options": [
+                "hand-analysis",
+                "talk-basic",
+                "thanks-basis",
+                "frank-class"
+            ],
+            "format": "kebab-case",
+            "answer": "thanks-basis"
+        },
+        {
+            "id": "0-0",
+            "question": "hopeful hearty",
+            "options": [
+                "hopefulHearty",
+                "spitefulHealthy",
+                "hatefulCharity",
+                "joyfulWeary"
+            ],
+            "format": "camelCase",
+            "answer": "hopefulHearty"
+        },
+        {
+            "id": "2-0",
+            "question": "fresh local",
+            "options": [
+                "fresh-local",
+                "frame-loyal",
+                "rest-goal",
+                "fish-official"
+            ],
+            "format": "kebab-case",
+            "answer": "fresh-local"
+        }
+    ],
+    "questions": [
+        {
+            "id": "0-0",
+            "question": "drab horrible",
+            "options": [
+                "drawer-honorable",
+                "dry-while",
+                "dream-adorable",
+                "drab-horrible"
+            ],
+            "format": "kebab-case",
+            "answer": "drab-horrible"
+        },
+        {
+            "id": "1-1",
+            "question": "juvenile crazy",
+            "options": [
+                "juniorCrazy",
+                "juiceCreamy",
+                "edibleScratchy",
+                "juvenileCrazy"
+            ],
+            "format": "camelCase",
+            "answer": "juvenileCrazy"
+        },
+        {
+            "id": "0-1",
+            "question": "drab horrible",
+            "options": [
+                "draftWorried",
+                "draftyReliable",
+                "dragSociable",
+                "drabHorrible"
+            ],
+            "format": "camelCase",
+            "answer": "drabHorrible"
+        },
+        {
+            "id": "1-2",
+            "question": "juvenile crazy",
+            "options": [
+                "uncle creamy",
+                "nimble curly",
+                "jovial scratchy",
+                "juvenile crazy"
+            ],
+            "format": "space",
+            "answer": "juvenile crazy"
+        },
+        {
+            "id": "1-0",
+            "question": "juvenile crazy",
+            "options": [
+                "vehicle-creamy",
+                "svelte-gray",
+                "gentle-scaly",
+                "juvenile-crazy"
+            ],
+            "format": "kebab-case",
+            "answer": "juvenile-crazy"
+        },
+        {
+            "id": "0-2",
+            "question": "drab horrible",
+            "options": [
+                "dry variable",
+                "admirable worried",
+                "dreary sociable",
+                "drab horrible"
+            ],
+            "format": "space",
+            "answer": "drab horrible"
+        }
+    ]
+}
