@@ -1,16 +1,8 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Question} from "../components/Question";
-import questionsData from "../../../generator/questions.json";
 import {Button, LinearProgress, Stack} from "@mui/material";
 import {finishExperiment, addAnswer, finishDemo} from "./experiment/experimentSlice.jsx";
-
-// questions are sorted for randomness (?) tbd
-//questions.sort(() => Math.random() - 0.5);
-const questions = [...questionsData["warmup"], ...questionsData["questions"]];
-const numQuestions = questions.length;
-
-const getQuestion = (idx) => questions[idx];
 
 export default function QuestionsPage({questions, demo = false}) {
     const dispatch = useDispatch();
@@ -19,7 +11,7 @@ export default function QuestionsPage({questions, demo = false}) {
     const handleAnswerClick = (answer) => {
         setTimeout(() => {
             dispatch(addAnswer(answer));
-            if (questionIdx + 1 === numQuestions) {
+            if (questionIdx + 25 === questions.length) {
                 if (demo) {
                     dispatch(finishDemo());
                 } else {
@@ -34,7 +26,7 @@ export default function QuestionsPage({questions, demo = false}) {
     return (<Stack sx={{width: 'min(600px, 100%)'}}>
         {/*<LinearProgress value={questionIdx / questions.length * 100} variant="determinate" sx={{marginBottom: 2}}/>*/}
         <Question
-            {...getQuestion(questionIdx)}
+            {...questions[questionIdx]}
             showCorrect={demo}
             onAnswerClick={handleAnswerClick}
         />

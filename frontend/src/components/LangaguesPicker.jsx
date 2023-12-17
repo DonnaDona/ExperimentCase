@@ -1,6 +1,6 @@
 import {Box, Checkbox, Chip, FormControl, FormHelperText, InputLabel, MenuItem, Select} from "@mui/material";
 
-const languages = ['C', 'C++', 'C#', 'CSS', 'HTML', 'Java', 'JavaScript', 'PHP', 'Python', 'Rust', 'Other'];
+const languages = ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'];
 export default function LanguagesPicker({onChange, value}) {
     const handleChange = (event) => {
         onChange(event.target.value);
@@ -19,13 +19,9 @@ export default function LanguagesPicker({onChange, value}) {
                     },
                 },
             }}
-            renderValue={(selected) => (
-                <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
-                    {selected.map((value) => (
-                        <Chip key={value} label={value} size={"small"}/>
-                    ))}
-                </Box>
-            )}
+            renderValue={(selected) => (<Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
+                    {selected.map((value) => (<Chip key={value} label={value} size={"small"}/>))}
+                </Box>)}
         >
             {languages.map((language) => <MenuItem key={language} value={language}>
                 <Checkbox checked={value.indexOf(language) > -1}/>

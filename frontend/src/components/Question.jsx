@@ -36,6 +36,7 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
             'time': endTime - startTime,
             'format': format,
         };
+        console.log(answer_obj);
 
         onAnswerClick(answer_obj); // Notify the parent component about the answer click
     };
@@ -63,7 +64,7 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
                         [theme.breakpoints.down('sm')]: {
                             fontSize: 20,
                         },
-                        
+
                         textTransform: "none",
                         borderRadius: 8,
                         backgroundColor: showCorrect ? (selectedOption === option && correct ? "lightGreen" : selectedOption === option ? "red" : "transparent") : "transparent",
