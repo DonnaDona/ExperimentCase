@@ -1,35 +1,32 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {Question} from "../components/Question";
 import questionsData from "../../../generator/questions.json";
+import {LinearProgress, Stack} from "@mui/material";
 
-const getRandomQuestion = () => {
-    const randomIndex = Math.floor(Math.random() * questionsData.length);
-    return questionsData[randomIndex];
-};
+// questions are sorted for randomness (?) tbd
+//questions.sort(() => Math.random() - 0.5);
+const questions = [...questionsData["warmup"], ...questionsData["questions"]];
+console.log(questions);
+
+const getQuestion = (idx) => questions[idx];
 
 export default function QuestionsPage() {
     const dispatch = useDispatch();
-    const [currentQuestion, setCurrentQuestion] = useState(getRandomQuestion());
-    const [selectedAnswers, setSelectedAnswers] = useState(Array(10).fill(null));
+    const [questionIdx, setQuestionIdx] = useState(0);
 
-    const handleAnswerClick = (questionIndex, answerIndex) => {
-        const newSelectedAnswers = [...selectedAnswers];
-        newSelectedAnswers[questionIndex] = answerIndex;
-        setSelectedAnswers(newSelectedAnswers);
-
+    const handleAnswerClick = (answer) => {
         setTimeout(() => {
-            setCurrentQuestion(getRandomQuestion());
+            setQuestionIdx(questionIdx + 1);
         }, 2000);
     };
 
-    return (
+    return (<Stack>
+        {/*<LinearProgress value={questionIdx / questions.length * 100} variant="determinate" sx={{marginBottom: 2}}/>*/}
         <Question
-            question={currentQuestion.question}
-            answer={currentQuestion.answer}
-            options={currentQuestion.options}
-            format={currentQuestion.format}
+            {...getQuestion(questionIdx)}
             onAnswerClick={handleAnswerClick}
         />
-    );
+
+    </Stack>);
 }

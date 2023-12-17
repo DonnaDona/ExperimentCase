@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Alert, Button, Card, CardContent, Stack, Typography } from "@mui/material";
+import React, {useEffect, useState} from "react";
+import {Alert, Button, Card, CardContent, Stack, Typography} from "@mui/material";
 
-export function Question({ question, options, answer, format, onAnswerClick }) {
+export function Question({id, question, options, answer, format, onAnswerClick}) {
     const [startTime, setStartTime] = useState(0);
     const [timeTaken, setTimeTaken] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -16,14 +16,13 @@ export function Question({ question, options, answer, format, onAnswerClick }) {
         setCorrect(false);
 
         setStartTime(getCurrentTime());
-    }, [question]);
+    }, [id]);
 
     const handleOptionClick = (option) => {
         const endTime = getCurrentTime();
         setTimeTaken(endTime - startTime);
 
         if (option === answer) {
-            console.log("Correct!");
             setCorrect(true);
         }
 
@@ -31,19 +30,14 @@ export function Question({ question, options, answer, format, onAnswerClick }) {
         onAnswerClick(option); // Notify the parent component about the answer click
     };
 
-    return (
-        <Card sx={{ padding: 4, borderRadius: 6 }}>
+    return (<Card sx={{padding: 4, borderRadius: 6}}>
             <CardContent>
-                <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 2 }}>
+                <Typography variant="h3" sx={{fontWeight: "bold", marginBottom: 2}}>
                     {question}
-                </Typography>
-                <Typography variant="h4" sx={{ marginBottom: 5 }}>
-                    Click the correct spelling.
                 </Typography>
 
                 <Stack>
-                    {options.map((option, index) => (
-                        <Button
+                    {options.map((option, index) => (<Button
                             key={index}
                             variant="outlined"
                             size="large"
@@ -52,12 +46,7 @@ export function Question({ question, options, answer, format, onAnswerClick }) {
                                 fontSize: 26,
                                 textTransform: "none",
                                 borderRadius: 8,
-                                backgroundColor:
-                                    selectedOption === option && correct
-                                        ? "green"
-                                        : selectedOption === option
-                                            ? "red"
-                                            : "transparent",
+                                backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
                                 color: selectedOption === option ? "white" : "black",
                             }}
                             onClick={() => {
@@ -66,14 +55,10 @@ export function Question({ question, options, answer, format, onAnswerClick }) {
                             disabled={selectedOption !== null}
                         >
                             {option}
-                        </Button>
-                    ))}
+                        </Button>))}
                 </Stack>
             </CardContent>
             {correct && <Alert severity="success">Correct!</Alert>}
-            {selectedOption !== null && !correct && (
-                <Alert severity="error">Incorrect!</Alert>
-            )}
-        </Card>
-    );
+            {selectedOption !== null && !correct && (<Alert severity="error">Incorrect!</Alert>)}
+        </Card>);
 }
