@@ -1,9 +1,6 @@
 import random
 import difflib
 
-# set seed for reproducibility
-random.seed("experiment2")
-
 
 def extract_words(words, num):
     return random.sample(words, num)
@@ -96,15 +93,16 @@ def generate_questions(words_list, words_per_question: int, num: int, answers_sa
 OPTIONS_FORMAT = ["kebab-case", "camelCase", "space"]
 
 
-def main(words_per_question, question_per_format, warmup_questions=1):
+def main(demo=False, words_per_question=2, unique_questions=10, warmup_questions=1):
     experiment = {"warmup": [], "questions": []}
     with open("./words.txt", "r") as f:
         words_list = f.read().splitlines()
 
         experiment["warmup"] = generate_questions(words_list, words_per_question, warmup_questions, False, False)
-        experiment["questions"] = generate_questions(words_list, words_per_question, question_per_format)
+        experiment["questions"] = generate_questions(words_list, words_per_question, unique_questions)
 
-    with open("./questions.json", "w") as f:
+    file_name = "demo" if demo else "questions"
+    with open(f"./{file_name}.json", "w") as f:
         import json
         json.dump(experiment, f, indent=4)
 
@@ -112,10 +110,10 @@ def main(words_per_question, question_per_format, warmup_questions=1):
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) < 3:
-        words_per_question = 2
-        question_per_format = 10
+    if "--demo" in sys.argv:
+        print("Creating demo file")
+        random.seed("demo")
+        main(demo=True, unique_questions=5)
     else:
-        words_per_question, question_per_format = map(int, sys.argv[1:3])
-
-    main(words_per_question, question_per_format)
+        random.seed("experiment2")
+        main()

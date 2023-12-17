@@ -1,0 +1,222 @@
+{
+    "warmup": [
+        {
+            "id": "0-0",
+            "question": "familiar lawyer",
+            "options": [
+                "familiarLawyer",
+                "familiarFlawed",
+                "alarmLame",
+                "frailDelayed"
+            ],
+            "format": "camelCase",
+            "answer": "familiarLawyer"
+        },
+        {
+            "id": "2-0",
+            "question": "majestic rotating",
+            "options": [
+                "dramatic-rain",
+                "music-doting",
+                "authentic-drawing",
+                "majestic-rotating"
+            ],
+            "format": "kebab-case",
+            "answer": "majestic-rotating"
+        },
+        {
+            "id": "1-0",
+            "question": "desk dealer",
+            "options": [
+                "due detailed",
+                "desk dealer",
+                "deposit ideal",
+                "address deal"
+            ],
+            "format": "space",
+            "answer": "desk dealer"
+        }
+    ],
+    "questions": [
+        {
+            "id": "0-0",
+            "question": "flawless interesting",
+            "options": [
+                "fearless-engineering",
+                "worthless-intentional",
+                "flawless-interesting",
+                "shameless-international"
+            ],
+            "format": "kebab-case",
+            "answer": "flawless-interesting"
+        },
+        {
+            "id": "3-1",
+            "question": "site serene",
+            "options": [
+                "sisterSense",
+                "siteSerene",
+                "biteSentence",
+                "spiteScreen"
+            ],
+            "format": "camelCase",
+            "answer": "siteSerene"
+        },
+        {
+            "id": "1-1",
+            "question": "clueless muscle",
+            "options": [
+                "guessRule",
+                "cluelessMuscle",
+                "colorlessUsed",
+                "classScale"
+            ],
+            "format": "camelCase",
+            "answer": "cluelessMuscle"
+        },
+        {
+            "id": "2-2",
+            "question": "shameless jolly",
+            "options": [
+                "shameless jolly",
+                "careless costly",
+                "shameful homely",
+                "mess frilly"
+            ],
+            "format": "space",
+            "answer": "shameless jolly"
+        },
+        {
+            "id": "4-0",
+            "question": "doctor coffee",
+            "options": [
+                "tour-feed",
+                "factor-feel",
+                "editor-offbeat",
+                "doctor-coffee"
+            ],
+            "format": "kebab-case",
+            "answer": "doctor-coffee"
+        },
+        {
+            "id": "2-1",
+            "question": "shameless jolly",
+            "options": [
+                "shamelessJolly",
+                "harmlessOily",
+                "ashamedSilly",
+                "defenselessChilly"
+            ],
+            "format": "camelCase",
+            "answer": "shamelessJolly"
+        },
+        {
+            "id": "0-2",
+            "question": "flawless interesting",
+            "options": [
+                "fearless glittering",
+                "glass everlasting",
+                "flawless interesting",
+                "class trusting"
+            ],
+            "format": "space",
+            "answer": "flawless interesting"
+        },
+        {
+            "id": "0-1",
+            "question": "flawless interesting",
+            "options": [
+                "cluelessGlittering",
+                "classTrusting",
+                "flawlessInteresting",
+                "glassInteraction"
+            ],
+            "format": "camelCase",
+            "answer": "flawlessInteresting"
+        },
+        {
+            "id": "1-2",
+            "question": "clueless muscle",
+            "options": [
+                "cruel muffled",
+                "clueless muscle",
+                "useless rule",
+                "reckless used"
+            ],
+            "format": "space",
+            "answer": "clueless muscle"
+        },
+        {
+            "id": "3-2",
+            "question": "site serene",
+            "options": [
+                "suit secret",
+                "site serene",
+                "spiteful difference",
+                "item sentence"
+            ],
+            "format": "space",
+            "answer": "site serene"
+        },
+        {
+            "id": "4-2",
+            "question": "doctor coffee",
+            "options": [
+                "poor confidence",
+                "mediocre offbeat",
+                "tour officer",
+                "doctor coffee"
+            ],
+            "format": "space",
+            "answer": "doctor coffee"
+        },
+        {
+            "id": "1-0",
+            "question": "clueless muscle",
+            "options": [
+                "guess-user",
+                "clueless-muscle",
+                "fearless-masculine",
+                "colorless-mouse"
+            ],
+            "format": "kebab-case",
+            "answer": "clueless-muscle"
+        },
+        {
+            "id": "3-0",
+            "question": "site serene",
+            "options": [
+                "size-street",
+                "site-serene",
+                "steep-severe",
+                "positive-secret"
+            ],
+            "format": "kebab-case",
+            "answer": "site-serene"
+        },
+        {
+            "id": "4-1",
+            "question": "doctor coffee",
+            "options": [
+                "tornCollege",
+                "locationConfidence",
+                "sectorConference",
+                "doctorCoffee"
+            ],
+            "format": "camelCase",
+            "answer": "doctorCoffee"
+        },
+        {
+            "id": "2-0",
+            "question": "shameless jolly",
+            "options": [
+                "shameless-jolly",
+                "clueless-costly",
+                "defenseless-silly",
+                "careless-scholarly"
+            ],
+            "format": "kebab-case",
+            "answer": "shameless-jolly"
+        }
+    ]
+}
