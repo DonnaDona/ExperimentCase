@@ -46,13 +46,11 @@ export default function HomePage() {
                     Evaluation</i>.
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
-                    You will be shown 2 words separated by a white space and 4 options written in some
-                    naming convention. Your task is to select the option that rewrites the
-                    original 2 words in that naming convention.
-                </Typography>
-                <Typography variant="body1" sx={{marginTop: 1}}>
-                    Your task is to select the correct option in the least amount of time possible, while
-                    maintaining a high accuracy.
+                    You will be shown 2 words separated by a white space, and 4 options written in some
+                    naming convention.
+
+                    Your task is to select, in the least time possible, the option that rewrites the original 2 words in
+                    that naming convention.
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
                     This study will take approximately 5 minutes to complete.
@@ -68,7 +66,7 @@ export default function HomePage() {
                 The demo can be stopped at any time by clicking the "Stop" button.
             </Typography>
             <Typography variant="body1" sx={{marginTop: 1}}>
-                <i>Note</i>: The demo will show you whether your answer is correct or not; this will not be the case
+                <i><b>Note</b></i>: The demo will show you whether your answer is correct or not; this will not be the case
                 during the actual experiment.
             </Typography>
             <Button sx={{marginTop: 2}} variant="outlined" onClick={() => dispatch(startDemo())}>Demo</Button>
