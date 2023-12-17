@@ -18,7 +18,7 @@ export default function QuestionsPage() {
     const handleAnswerClick = (answer) => {
         setTimeout(() => {
             setQuestionIdx(questionIdx + 1);
-        }, 2000);
+        }, 500);
     };
 
     return (<Stack>

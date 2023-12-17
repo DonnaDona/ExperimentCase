@@ -46,8 +46,8 @@ export function Question({id, question, options, answer, format, onAnswerClick})
                                 fontSize: 26,
                                 textTransform: "none",
                                 borderRadius: 8,
-                                backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
-                                color: selectedOption === option ? "white" : "black",
+                                // backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
+                                // color: selectedOption === option ? "white" : "black",
                             }}
                             onClick={() => {
                                 handleOptionClick(option);
@@ -58,7 +58,7 @@ export function Question({id, question, options, answer, format, onAnswerClick})
                         </Button>))}
                 </Stack>
             </CardContent>
-            {correct && <Alert severity="success">Correct!</Alert>}
-            {selectedOption !== null && !correct && (<Alert severity="error">Incorrect!</Alert>)}
+            {/*{correct && <Alert severity="success">Correct!</Alert>}*/}
+            {/*{selectedOption !== null && !correct && (<Alert severity="error">Incorrect!</Alert>)}*/}
         </Card>);
 }
