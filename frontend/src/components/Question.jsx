@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, Button, Card, CardContent, Stack, Typography } from "@mui/material";
 
-export function Question({ question, options, answer }) {
+export function Question({ question, options, answer, format, onAnswerClick }) {
     const [startTime, setStartTime] = useState(0);
     const [timeTaken, setTimeTaken] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -12,15 +12,13 @@ export function Question({ question, options, answer }) {
     };
 
     useEffect(() => {
-        // reset selectedOption and correct when a new question is displayed
         setSelectedOption(null);
         setCorrect(false);
 
-        // start timing the new question
         setStartTime(getCurrentTime());
     }, [question]);
 
-    const handleAnswerClick = (option) => {
+    const handleOptionClick = (option) => {
         const endTime = getCurrentTime();
         setTimeTaken(endTime - startTime);
 
@@ -30,6 +28,7 @@ export function Question({ question, options, answer }) {
         }
 
         setSelectedOption(option);
+        onAnswerClick(option); // Notify the parent component about the answer click
     };
 
     return (
@@ -53,11 +52,16 @@ export function Question({ question, options, answer }) {
                                 fontSize: 26,
                                 textTransform: "none",
                                 borderRadius: 8,
-                                backgroundColor: selectedOption === option && correct ? "green" : selectedOption === option ? "red" : "transparent",
+                                backgroundColor:
+                                    selectedOption === option && correct
+                                        ? "green"
+                                        : selectedOption === option
+                                            ? "red"
+                                            : "transparent",
                                 color: selectedOption === option ? "white" : "black",
                             }}
                             onClick={() => {
-                                handleAnswerClick(option);
+                                handleOptionClick(option);
                             }}
                             disabled={selectedOption !== null}
                         >
@@ -67,7 +71,9 @@ export function Question({ question, options, answer }) {
                 </Stack>
             </CardContent>
             {correct && <Alert severity="success">Correct!</Alert>}
-            {selectedOption !== null && !correct && <Alert severity="error">Incorrect!</Alert>}
+            {selectedOption !== null && !correct && (
+                <Alert severity="error">Incorrect!</Alert>
+            )}
         </Card>
     );
 }
