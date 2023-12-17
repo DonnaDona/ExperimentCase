@@ -1,332 +1,369 @@
-[
-    {
-        "question": "communication plaintive",
-        "options": [
-            "communication-plaintive",
-            "location-polite",
-            "connection-relative",
-            "condition-imaginative"
-        ],
-        "format": "kebab-case",
-        "answer": "communication-plaintive"
-    },
-    {
-        "question": "communication plaintive",
-        "options": [
-            "indicationPolite",
-            "competitionActive",
-            "conditionPainting",
-            "communicationPlaintive"
-        ],
-        "format": "camelCase",
-        "answer": "communicationPlaintive"
-    },
-    {
-        "question": "communication plaintive",
-        "options": [
-            "communication plaintive",
-            "foundation polite",
-            "combination plant",
-            "organization relative"
-        ],
-        "format": "space",
-        "answer": "communication plaintive"
-    },
-    {
-        "question": "helpful attempt",
-        "options": [
-            "respectful-patient",
-            "shameful-unkempt",
-            "helpless-matter",
-            "helpful-attempt"
-        ],
-        "format": "kebab-case",
-        "answer": "helpful-attempt"
-    },
-    {
-        "question": "helpful attempt",
-        "options": [
-            "helpfulAttempt",
-            "carefulUnkempt",
-            "usefulBattle",
-            "respectfulAttentive"
-        ],
-        "format": "camelCase",
-        "answer": "helpfulAttempt"
-    },
-    {
-        "question": "helpful attempt",
-        "options": [
-            "helpful attempt",
-            "woeful matter",
-            "careful pattern",
-            "useful patient"
-        ],
-        "format": "space",
-        "answer": "helpful attempt"
-    },
-    {
-        "question": "blood story",
-        "options": [
-            "blood-story",
-            "blond-sector",
-            "book-sore",
-            "loud-storm"
-        ],
-        "format": "kebab-case",
-        "answer": "blood-story"
-    },
-    {
-        "question": "blood story",
-        "options": [
-            "bodyHistory",
-            "blondStormy",
-            "bloodStory",
-            "moodTheory"
-        ],
-        "format": "camelCase",
-        "answer": "bloodStory"
-    },
-    {
-        "question": "blood story",
-        "options": [
-            "good sector",
-            "blood story",
-            "loud stormy",
-            "body history"
-        ],
-        "format": "space",
-        "answer": "blood story"
-    },
-    {
-        "question": "worthwhile grab",
-        "options": [
-            "whole-grave",
-            "horrible-garage",
-            "worthy-grubby",
-            "worthwhile-grab"
-        ],
-        "format": "kebab-case",
-        "answer": "worthwhile-grab"
-    },
-    {
-        "question": "worthwhile grab",
-        "options": [
-            "worthwhileGrab",
-            "wholeRaw",
-            "writhingAgreeable",
-            "whiteGrade"
-        ],
-        "format": "camelCase",
-        "answer": "worthwhileGrab"
-    },
-    {
-        "question": "worthwhile grab",
-        "options": [
-            "while grass",
-            "worthwhile grab",
-            "other great",
-            "worse grave"
-        ],
-        "format": "space",
-        "answer": "worthwhile grab"
-    },
-    {
-        "question": "boot French",
-        "options": [
-            "bother-stretch",
-            "bottom-currency",
-            "boot-French",
-            "tooth-presence"
-        ],
-        "format": "kebab-case",
-        "answer": "boot-French"
-    },
-    {
-        "question": "boot French",
-        "options": [
-            "bootFrench",
-            "hotFresh",
-            "bottomBranch",
-            "bloodWretched"
-        ],
-        "format": "camelCase",
-        "answer": "bootFrench"
-    },
-    {
-        "question": "boot French",
-        "options": [
-            "book presence",
-            "boot French",
-            "blood branch",
-            "bother each"
-        ],
-        "format": "space",
-        "answer": "boot French"
-    },
-    {
-        "question": "horror right",
-        "options": [
-            "horror-right",
-            "short-straight",
-            "tomorrow-light",
-            "order-fight"
-        ],
-        "format": "kebab-case",
-        "answer": "horror-right"
-    },
-    {
-        "question": "horror right",
-        "options": [
-            "hookLight",
-            "photoFlight",
-            "honoredFight",
-            "horrorRight"
-        ],
-        "format": "camelCase",
-        "answer": "horrorRight"
-    },
-    {
-        "question": "horror right",
-        "options": [
-            "hook flight",
-            "worry fight",
-            "error light",
-            "horror right"
-        ],
-        "format": "space",
-        "answer": "horror right"
-    },
-    {
-        "question": "frightened childhood",
-        "options": [
-            "enlightened-cloud",
-            "flight-cooked",
-            "frightened-childhood",
-            "boyfriend-philosophy"
-        ],
-        "format": "kebab-case",
-        "answer": "frightened-childhood"
-    },
-    {
-        "question": "frightened childhood",
-        "options": [
-            "friendCloud",
-            "rightCooked",
-            "frightenedChildhood",
-            "flightHideous"
-        ],
-        "format": "camelCase",
-        "answer": "frightenedChildhood"
-    },
-    {
-        "question": "frightened childhood",
-        "options": [
-            "bright crooked",
-            "enlightened honored",
-            "friendship chilly",
-            "frightened childhood"
-        ],
-        "format": "space",
-        "answer": "frightened childhood"
-    },
-    {
-        "question": "gene old",
-        "options": [
-            "sense-world",
-            "agent-god",
-            "gene-old",
-            "generous-golden"
-        ],
-        "format": "kebab-case",
-        "answer": "gene-old"
-    },
-    {
-        "question": "gene old",
-        "options": [
-            "generousSolid",
-            "geneOld",
-            "generalBold",
-            "tenseOdd"
-        ],
-        "format": "camelCase",
-        "answer": "geneOld"
-    },
-    {
-        "question": "gene old",
-        "options": [
-            "scene bold",
-            "general world",
-            "agent gold",
-            "gene old"
-        ],
-        "format": "space",
-        "answer": "gene old"
-    },
-    {
-        "question": "sink stress",
-        "options": [
-            "silky-press",
-            "shiny-austere",
-            "shine-dress",
-            "sink-stress"
-        ],
-        "format": "kebab-case",
-        "answer": "sink-stress"
-    },
-    {
-        "question": "sink stress",
-        "options": [
-            "silkyStrike",
-            "sinkStress",
-            "sickStreet",
-            "linkUseless"
-        ],
-        "format": "camelCase",
-        "answer": "sinkStress"
-    },
-    {
-        "question": "sink stress",
-        "options": [
-            "pink striped",
-            "sink stress",
-            "shiny strike",
-            "sick stroke"
-        ],
-        "format": "space",
-        "answer": "sink stress"
-    },
-    {
-        "question": "worrisome thorny",
-        "options": [
-            "worst-phony",
-            "worrisome-thorny",
-            "horrible-history",
-            "wise-author"
-        ],
-        "format": "kebab-case",
-        "answer": "worrisome-thorny"
-    },
-    {
-        "question": "worrisome thorny",
-        "options": [
-            "noiseOrnery",
-            "awesomeTry",
-            "worrisomeThorny",
-            "wiseStory"
-        ],
-        "format": "camelCase",
-        "answer": "worrisomeThorny"
-    },
-    {
-        "question": "worrisome thorny",
-        "options": [
-            "gruesome phony",
-            "surprise thrifty",
-            "quarrelsome corny",
-            "worrisome thorny"
-        ],
-        "format": "space",
-        "answer": "worrisome thorny"
-    }
-]
+{
+    "warmup": [
+        {
+            "question": "married game",
+            "options": [
+                "marriage-camera",
+                "married-game",
+                "mature-same",
+                "mixed-shame"
+            ],
+            "format": "kebab-case",
+            "answer": "married-game"
+        },
+        {
+            "question": "married game",
+            "options": [
+                "married game",
+                "worried grave",
+                "scared frame",
+                "mixed camera"
+            ],
+            "format": "space",
+            "answer": "married game"
+        },
+        {
+            "question": "married game",
+            "options": [
+                "mixedName",
+                "marriedGame",
+                "surprisedSample",
+                "embarrassedCamera"
+            ],
+            "format": "camelCase",
+            "answer": "marriedGame"
+        }
+    ],
+    "questions": [
+        {
+            "question": "immaterial hurry",
+            "options": [
+                "international-jury",
+                "immaterial-hurry",
+                "international-husky",
+                "matter-curly"
+            ],
+            "format": "kebab-case",
+            "answer": "immaterial-hurry"
+        },
+        {
+            "question": "past supportive",
+            "options": [
+                "past-supportive",
+                "east-productive",
+                "hasty-sore",
+                "fast-positive"
+            ],
+            "format": "kebab-case",
+            "answer": "past-supportive"
+        },
+        {
+            "question": "immaterial hurry",
+            "options": [
+                "equatorial hairy",
+                "immaterial hurry",
+                "shimmering curvy",
+                "impartial hungry"
+            ],
+            "format": "space",
+            "answer": "immaterial hurry"
+        },
+        {
+            "question": "muddy insurance",
+            "options": [
+                "murky distance",
+                "muddy insurance",
+                "mushy strange",
+                "cloudy source"
+            ],
+            "format": "space",
+            "answer": "muddy insurance"
+        },
+        {
+            "question": "expert ordinary",
+            "options": [
+                "expert-original",
+                "expert-ordinary",
+                "beer-worry",
+                "repeat-original"
+            ],
+            "format": "kebab-case",
+            "answer": "expert-ordinary"
+        },
+        {
+            "question": "fail button",
+            "options": [
+                "fail button",
+                "frail station",
+                "film buttery",
+                "faint burn"
+            ],
+            "format": "space",
+            "answer": "fail button"
+        },
+        {
+            "question": "past supportive",
+            "options": [
+                "past supportive",
+                "fast positive",
+                "past instructive",
+                "part sore"
+            ],
+            "format": "space",
+            "answer": "past supportive"
+        },
+        {
+            "question": "muddy insurance",
+            "options": [
+                "mushy-instructive",
+                "muddy-insurance",
+                "deadly-sane",
+                "buddy-finance"
+            ],
+            "format": "kebab-case",
+            "answer": "muddy-insurance"
+        },
+        {
+            "question": "expert ordinary",
+            "options": [
+                "beer orderly",
+                "expert ordinary",
+                "poet ordinary",
+                "experience original"
+            ],
+            "format": "space",
+            "answer": "expert ordinary"
+        },
+        {
+            "question": "tough blaring",
+            "options": [
+                "thorough warning",
+                "tough blaring",
+                "thoughtful alarming",
+                "rough hearing"
+            ],
+            "format": "space",
+            "answer": "tough blaring"
+        },
+        {
+            "question": "tough blaring",
+            "options": [
+                "roughDaring",
+                "toughBlaring",
+                "thoroughLasting",
+                "thoughtHearing"
+            ],
+            "format": "camelCase",
+            "answer": "toughBlaring"
+        },
+        {
+            "question": "unsung hearty",
+            "options": [
+                "unsung-hearty",
+                "crushing-hefty",
+                "song-early",
+                "housing-chart"
+            ],
+            "format": "kebab-case",
+            "answer": "unsung-hearty"
+        },
+        {
+            "question": "unsung hearty",
+            "options": [
+                "unsung hearty",
+                "funny hairy",
+                "smug heat",
+                "crushing chart"
+            ],
+            "format": "space",
+            "answer": "unsung hearty"
+        },
+        {
+            "question": "fail button",
+            "options": [
+                "fail-button",
+                "family-tone",
+                "failing-buttery",
+                "agile-bony"
+            ],
+            "format": "kebab-case",
+            "answer": "fail-button"
+        },
+        {
+            "question": "board doctor",
+            "options": [
+                "boardDoctor",
+                "aridTorn",
+                "bareMediocre",
+                "broadEditor"
+            ],
+            "format": "camelCase",
+            "answer": "boardDoctor"
+        },
+        {
+            "question": "tough blaring",
+            "options": [
+                "thorough-leading",
+                "tough-blaring",
+                "tooth-ring",
+                "young-boiling"
+            ],
+            "format": "kebab-case",
+            "answer": "tough-blaring"
+        },
+        {
+            "question": "selfish light",
+            "options": [
+                "specialistDelightful",
+                "selfishLight",
+                "foolishFight",
+                "slightSlight"
+            ],
+            "format": "camelCase",
+            "answer": "selfishLight"
+        },
+        {
+            "question": "immaterial hurry",
+            "options": [
+                "impartialCurrency",
+                "immaterialHurry",
+                "internationalCurly",
+                "shimmeringSurgery"
+            ],
+            "format": "camelCase",
+            "answer": "immaterialHurry"
+        },
+        {
+            "question": "muddy insurance",
+            "options": [
+                "mudSubstance",
+                "muddyInsurance",
+                "studyInsecure",
+                "cloudyFinance"
+            ],
+            "format": "camelCase",
+            "answer": "muddyInsurance"
+        },
+        {
+            "question": "selfish light",
+            "options": [
+                "series light",
+                "selfish light",
+                "unselfish bright",
+                "slushy high"
+            ],
+            "format": "space",
+            "answer": "selfish light"
+        },
+        {
+            "question": "past supportive",
+            "options": [
+                "pastSupportive",
+                "hastyProductive",
+                "vastDescriptive",
+                "pathSupport"
+            ],
+            "format": "camelCase",
+            "answer": "pastSupportive"
+        },
+        {
+            "question": "board doctor",
+            "options": [
+                "board-doctor",
+                "bold-actor",
+                "broad-editor",
+                "road-director"
+            ],
+            "format": "kebab-case",
+            "answer": "board-doctor"
+        },
+        {
+            "question": "unsung hearty",
+            "options": [
+                "unsungHearty",
+                "amusingCharity",
+                "trustingHeart",
+                "singHeavy"
+            ],
+            "format": "camelCase",
+            "answer": "unsungHearty"
+        },
+        {
+            "question": "form touch",
+            "options": [
+                "form-touch",
+                "frame-thorough",
+                "farm-tough",
+                "informal-youth"
+            ],
+            "format": "kebab-case",
+            "answer": "form-touch"
+        },
+        {
+            "question": "expert ordinary",
+            "options": [
+                "examplePrimary",
+                "expertOrdinary",
+                "reportCorny",
+                "expertDirty"
+            ],
+            "format": "camelCase",
+            "answer": "expertOrdinary"
+        },
+        {
+            "question": "board doctor",
+            "options": [
+                "board doctor",
+                "border poor",
+                "bad editor",
+                "bird factor"
+            ],
+            "format": "space",
+            "answer": "board doctor"
+        },
+        {
+            "question": "form touch",
+            "options": [
+                "formTouch",
+                "farmTour",
+                "formalYouth",
+                "firmTough"
+            ],
+            "format": "camelCase",
+            "answer": "formTouch"
+        },
+        {
+            "question": "selfish light",
+            "options": [
+                "slushy-flight",
+                "selfish-light",
+                "slight-bright",
+                "finish-light"
+            ],
+            "format": "kebab-case",
+            "answer": "selfish-light"
+        },
+        {
+            "question": "fail button",
+            "options": [
+                "failButton",
+                "filmTorn",
+                "nailTone",
+                "failingStation"
+            ],
+            "format": "camelCase",
+            "answer": "failButton"
+        },
+        {
+            "question": "form touch",
+            "options": [
+                "form touch",
+                "farm tooth",
+                "informal thorough",
+                "floor tour"
+            ],
+            "format": "space",
+            "answer": "form touch"
+        }
+    ]
+}
