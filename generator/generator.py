@@ -39,8 +39,8 @@ def generate_questions(words_list, words_per_question: int, num: int, answers_sa
 
         # make sure that
         right_answer_position = random.randint(0, words_per_question - 1)
-        for format in OPTIONS_FORMAT:
-            question_obj = {"question": format_words(words, "space"), "options": [], "format": format,
+        for j, format in enumerate(OPTIONS_FORMAT):
+            question_obj = {"id": f"{i}-{j}", "question": format_words(words, "space"), "options": [], "format": format,
                             "answer": format_words(words, format)}
 
             options = generate_options(words_list, words, format)
