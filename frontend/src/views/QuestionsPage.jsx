@@ -10,7 +10,8 @@ export default function QuestionsPage({questions, demo = false}) {
 
     const handleAnswerClick = (answer) => {
         setTimeout(() => {
-            dispatch(addAnswer(answer));
+            if (!demo) dispatch(addAnswer(answer));
+
             if (questionIdx === questions.length - 1) {
                 if (demo) {
                     dispatch(finishDemo());
