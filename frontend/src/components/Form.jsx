@@ -16,6 +16,7 @@ export default function Form({onSubmit}) {
     const [dyslexia, setDyslexia] = useState(false);
     const [isEnglishSpeaker, setIsEnglishSpeaker] = useState(false);
     const [programmingExperience, setProgrammingExperience] = useState(0);
+    const [isTouchScreen, setIsTouchScreen] = useState(false);
     const [languages, setLanguages] = useState([]);
 
     // error handling
@@ -53,7 +54,7 @@ export default function Form({onSubmit}) {
     const handleClick = () => {
         if (!checkAge(age)) return;
         if (!checkProgrammingExperience(programmingExperience)) return;
-        onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, languages});
+        onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, isTouchScreen, languages});
     }
 
     const handleAgeChange = (event) => {
@@ -117,6 +118,12 @@ export default function Form({onSubmit}) {
                                    onChange={(event) => setIsEnglishSpeaker(event.target.checked)}/>}
                 label={t("Fluent English Speaker")}
             />
+
+            <FormControlLabel control={<Checkbox checked={isTouchScreen}
+                                                 onChange={(event) => setIsTouchScreen(event.target.checked)}/>}
+                              label={t("Using touch screen")}
+            />
+
 
             <FormControl sx={leftAlignedStyle}>
                 <FormLabel component="legend"

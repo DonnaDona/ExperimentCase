@@ -27,6 +27,7 @@ const resources = {
             "Select this checkbox if your vision is compromised temporarly (e.g. your eyes hurt) or permanently (e.g. you wear glasses)": "Spunta questa casella se la tua vista è compromessa temporaneamente (per esempio, ti fanno male gli occhi) o permanentemente (per esempio, porti gli occhiali)",
             "Dyslexia": "Dislessia",
             "Fluent English Speaker": "Inglese fluente",
+            "Using touch screen": "Sto usando uno schermo touch",
             "Programming Experience": "Esperienza di programmazione",
             "Start": "Inizia",
             "Programming experience is required": "Il campo 'Esperienza di programmazione' è obbligatorio",

@@ -16,6 +16,7 @@ const formSchema = new mongoose.Schema({
     dyslexia: {type: Boolean, required: true},
     isEnglishSpeaker: {type: Boolean, required: true},
     programmingExperience: {type: Number, required: true, min: 0, max: 50},
+    isTouchScreen: {type: Boolean, required: true},
     languages: {
         type: [String],
         enum: ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'],
