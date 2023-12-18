@@ -1,7 +1,7 @@
 {
     "warmup": [
         {
-            "id": "0-0",
+            "id": "w-0-0",
             "question": "runny trash",
             "options": [
                 "drunkTasty",
@@ -13,7 +13,7 @@
             "answer": "runnyTrash"
         },
         {
-            "id": "2-0",
+            "id": "w-2-0",
             "question": "register muddy",
             "options": [
                 "register-muddy",
@@ -25,7 +25,7 @@
             "answer": "register-muddy"
         },
         {
-            "id": "1-0",
+            "id": "w-1-0",
             "question": "gear distance",
             "options": [
                 "wearEntrance",

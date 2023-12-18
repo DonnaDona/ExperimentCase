@@ -106,9 +106,10 @@ def main(demo=False, words_per_question=2, unique_questions=10, warmup_questions
         words_list = f.read().splitlines()
         words_list = [word for word in words_list if len(word) <= 8 and len(word) >= 4]
         random.shuffle(words_list)
-        print(len(words_list))
 
         experiment["warmup"] = generate_questions(words_list, words_per_question, warmup_questions, False, False)
+        for question in experiment["warmup"]:
+            question["id"] = f"w-{question['id']}"
         experiment["questions"] = generate_questions(words_list, words_per_question, unique_questions)
 
     file_name = "demo" if demo else "questions"
