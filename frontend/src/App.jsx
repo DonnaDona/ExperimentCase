@@ -7,6 +7,8 @@ import {Stack, useTheme} from "@mui/material";
 import Finished from "./views/Finished.jsx";
 
 import {questions, demo} from "./questions.js";
+import PLPicker from "./components/PLPicker.jsx";
+import LanguagePicker from "./components/LanguagePicker.jsx";
 
 function App() {
     const isDemo = useSelector(selectIsDemo);
@@ -26,17 +28,19 @@ function App() {
         }
     }
 
-    return (<Stack justifyContent={"center"} sx={{
-        padding: 0, [theme.breakpoints.up('md')]: {
-            padding: 2,
-        },
-    }}>
-        <div style={{
-            maxWidth: '100%', overflowX: 'hidden', display: 'flex', alignContent: 'center', justifyContent: 'center'
+    return (<>
+        <Stack justifyContent={"center"} sx={{
+            padding: 0, [theme.breakpoints.up('md')]: {
+                padding: 2,
+            },
         }}>
-            {visibleView()}
-        </div>
-    </Stack>)
+            <div style={{
+                maxWidth: '100%', overflowX: 'hidden', display: 'flex', alignContent: 'center', justifyContent: 'center'
+            }}>
+                {visibleView()}
+            </div>
+        </Stack>
+    </>)
 }
 
 export default App

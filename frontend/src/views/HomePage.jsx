@@ -17,6 +17,7 @@ import {setPersonData, startDemo, startExperiment} from "./experiment/experiment
 import {useDispatch} from "react-redux";
 import Form from "../components/Form.jsx";
 import {useTranslation} from "react-i18next";
+import LanguagePicker from "../components/LanguagePicker.jsx";
 
 export default function HomePage() {
     const {t} = useTranslation();
@@ -35,10 +36,18 @@ export default function HomePage() {
         sx={{
             borderRadius: 0, padding: 3, paddingTop: 4, [theme.breakpoints.up('sm')]: {
                 borderRadius: 6, padding: 5,
-            }, width: 'min(600px, 100%)',
+            }, width: 'min(650px, 100%)',
         }}>
-        <Typography variant="h3">{t("Camel or Kebab case?")}</Typography>
-        <Typography variant="h6" sx={{marginTop: 2}}>{t("A study on the readability of different naming conventions.")}</Typography>
+        <Stack sx={{flexDirection: "row", justifyContent: "space-between", [theme.breakpoints.down('sm')]: {
+            flexDirection: "column-reverse", justifyContent: "center", gap: 4
+        }}}>
+
+            <Typography variant="h3">{t("Camel or Kebab case?")}</Typography>
+
+            <LanguagePicker/>
+        </Stack>
+        <Typography variant="h6"
+                    sx={{marginTop: 2}}>{t("A study on the readability of different naming conventions.")}</Typography>
         {state === 0 && <>
             <Stack>
 

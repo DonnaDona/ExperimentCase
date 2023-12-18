@@ -3,7 +3,7 @@ import {
 } from "@mui/material";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import React, {useState} from "react";
-import LanguagesPicker from "./LangaguesPicker.jsx";
+import PLPicker from "./PLPicker.jsx";
 import {useTranslation} from "react-i18next";
 
 const leftAlignedStyle = {
@@ -124,7 +124,7 @@ export default function Form({onSubmit}) {
                 <FormLabel component="legend">
                     <span>{t("Programming Languages")}</span>
                 </FormLabel>
-                <LanguagesPicker value={languages} onChange={setLanguages}/>
+                <PLPicker value={languages} onChange={setLanguages}/>
             </FormControl>
 
             <Button

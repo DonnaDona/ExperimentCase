@@ -20,8 +20,7 @@ const resources = {
             "Not clear? Try the demo mode using the button below.": "Non è chiaro? Prova la modalità demo usando il pulsante qui sotto.",
             "The demo can be stopped at any time by clicking the \"Stop\" button.": "La demo può essere interrotta in qualsiasi momento cliccando il pulsante \"Stop\".",
             "Note": "Nota",
-            "The demo will show you whether your answer is correct or not; this will not be the case during the actual experiment.": "La demo ti mostrerà se la tua risposta è corretta o meno; questo non sarà il caso durante l'esperimento vero e proprio.",
-            // form
+            "The demo will show you whether your answer is correct or not; this will not be the case during the actual experiment.": "La demo ti mostrerà se la tua risposta è corretta o meno; questo non sarà il caso durante l'esperimento vero e proprio.", // form
             "Enter your information:": "Inserisci le tue informazioni:",
             "Age": "Età",
             "Eye Issues": "Problemi di vista",
@@ -32,8 +31,7 @@ const resources = {
             "Programming experience is required": "Il campo 'Esperienza di programmazione' è obbligatorio",
             "Age is required": "Il campo 'Età' è obbligatorio",
             "Programming Languages": "Linguaggi di programmazione",
-            "Select all languages you are familiar with.": "Seleziona tutti i linguaggi che hai utilizzato.",
-            // finished
+            "Select all languages you are familiar with.": "Seleziona tutti i linguaggi che hai utilizzato.", // finished
             "Thank you for participating!": "Grazie per aver partecipato!",
             "Sending your data... Please wait.": "Invio dei dati... Attendere prego.",
             "An error occurred while sending your data. Please notify the experiment conductors, reporting the following text:": "Si è verificato un errore durante l'invio dei dati. Si prega di notificare i conduttori dell'esperimento, riportando il seguente testo:",
@@ -42,8 +40,22 @@ const resources = {
     }
 };
 
+const getLanguage = () => {
+    const language = localStorage.getItem("language");
+    if (language) {
+        return language;
+    }
+    const navigatorLanguage = navigator.language;
+    if (navigatorLanguage) {
+        localStorage.setItem("language", navigatorLanguage);
+        return navigatorLanguage;
+    }
+    localStorage.setItem("language", "en");
+    return "en";
+}
+
 i18n.use(initReactI18next).init({
-    resources, lng: "it", keySeparator: false, interpolation: {
+    resources, lng: getLanguage(), keySeparator: false, interpolation: {
         escapeValue: false
     }
 });

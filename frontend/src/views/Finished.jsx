@@ -25,7 +25,7 @@ export default function Finished() {
     }, []);
     return (<Card
         sx={{
-            borderRadius: 6, padding: 5, width: 'min(600px, 100%)',
+            borderRadius: 6, padding: 5, width: 'min(650px, 100%)',
         }}>
         <Stack>
             <Typography variant="h3" sx={{fontWeight: "bold", marginBottom: 2}}>

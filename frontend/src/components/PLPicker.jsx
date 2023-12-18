@@ -2,7 +2,7 @@ import {Box, Checkbox, Chip, FormControl, FormHelperText, InputLabel, MenuItem, 
 import {useTranslation} from "react-i18next";
 
 const languages = ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'];
-export default function LanguagesPicker({onChange, value}) {
+export default function PLPicker({onChange, value}) {
     const {t} = useTranslation();
     const handleChange = (event) => {
         onChange(event.target.value);

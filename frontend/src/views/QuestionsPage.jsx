@@ -23,7 +23,7 @@ export default function QuestionsPage({questions, demo = false}) {
         }, 500);
     };
 
-    return (<Stack sx={{width: 'min(600px, 100%)'}}>
+    return (<Stack sx={{width: 'min(650px, 100%)'}}>
         {/*<LinearProgress value={questionIdx / questions.length * 100} variant="determinate" sx={{marginBottom: 2}}/>*/}
         <Question
             {...questions[questionIdx]}
