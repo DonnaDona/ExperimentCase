@@ -46,8 +46,12 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
             {/*set smaller variant on mobile*/}
             <Typography variant="h2"
                         sx={{
-                            fontWeight: "bold", marginBottom: 2, [theme.breakpoints.down('sm')]: {
+                            fontWeight: "bold", marginBottom: 2,
+                            [theme.breakpoints.down('sm')]: {
                                 fontSize: 32,
+                            },
+                            [theme.breakpoints.down('xs')]: {
+                                fontSize: 26,
                             }
                         }}>
                 {question}
@@ -62,9 +66,12 @@ export function Question({id, question, warmup, options, answer, format, onAnswe
                         marginTop: 3,
                         fontSize: 26,
                         [theme.breakpoints.down('sm')]: {
-                            fontSize: 20,
+                            fontSize: 22,
                         },
-
+                        [theme.breakpoints.down('xs')]: {
+                            fontSize: 18,
+                            letterSpacing: '1px',
+                        },
                         textTransform: "none",
                         borderRadius: 8,
                         backgroundColor: showCorrect ? (selectedOption === option && correct ? "lightGreen" : selectedOption === option ? "red" : "transparent") : "transparent",
