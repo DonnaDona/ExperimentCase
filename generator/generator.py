@@ -22,16 +22,32 @@ def format_words(words, case):
         return " ".join(words)
 
 
+def common_prefix_len(a, b):
+    i = 0
+    while i < len(a) and i < len(b) and a[i] == b[i]:
+        i += 1
+    return i
+
+
 def generate_options(words_list, words, format):
     options = []
     for i in range(3):
         options.append([])
     for word in words:
         # sort words_list by how similar they are to word and take the top 15
-        wl = sorted(words_list, key=lambda w: difflib.SequenceMatcher(None, w, word).ratio(), reverse=True)[1:15]
+        similar_words_list = [w for w in words_list if w[0] == word[0]]
+        wl = sorted(similar_words_list, key=lambda w: (common_prefix_len(w, word)+1) - (abs(len(w) - len(word))),
+                    reverse=True)[1:15]
         random.shuffle(wl)
         for i in range(3):
             options[i].append(wl[i])
+
+    random.shuffle(options)
+
+    for i in range(2):
+        options[i][0] = words[0]
+
+    random.shuffle(options)
 
     return [format_words(option, format) for option in options]
 
@@ -51,8 +67,7 @@ def generate_right_answers_position(num_questions: int):
     return positions
 
 
-def generate_questions(words_list, words_per_question: int, num: int, answers_same_order=True,
-                       all_formats=True):
+def generate_questions(words_list, words_per_question: int, num: int, answers_same_order=True, all_formats=True):
     questions = []
     if not all_formats:
         num *= 3
@@ -92,15 +107,15 @@ def generate_questions(words_list, words_per_question: int, num: int, answers_sa
     for i in range(1, len(questions)):
         j = i - 1
         while questions[i]["question"] == questions[j]["question"]:
-            random.shuffle(questions)
-            j = i - 1
+            questions[i], questions[j] = questions[j], questions[i]
+            j -= 1
     return questions
 
 
 OPTIONS_FORMAT = ["kebab-case", "camelCase", "space"]
 
 
-def main(demo=False, words_per_question=2, unique_questions=10, warmup_questions=1):
+def main(demo=False, words_per_question=2, unique_questions=10, warmup_questions=2):
     experiment = {"warmup": [], "questions": []}
     with open("./words.txt", "r") as f:
         words_list = f.read().splitlines()
