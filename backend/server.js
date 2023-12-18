@@ -18,5 +18,15 @@ connectDB()
 
 app.use('/api', require('./routes/api'));
 
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    const buildDirectory = path.join(__dirname, './dist');
+    app.use(express.static(buildDirectory));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(buildDirectory, "index.html"));
+    });
+}
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
