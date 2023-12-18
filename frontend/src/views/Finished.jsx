@@ -5,6 +5,43 @@ import {useSelector} from "react-redux";
 import axios from "axios";
 import {useTranslation} from "react-i18next";
 
+const generateStats = (experiment) => {
+    const stats = {
+        correct: 0, total: 0, averageWhiteSpaceTime: 0, averageCamelCaseTime: 0, averageKebabCaseTime: 0,
+    };
+    const {answers} = experiment;
+    stats.total = answers.length;
+    
+    const times = {"camel": [0,0], "kebab": [0,0], "space": [0,0]};
+    
+    for (const question of answers) {
+        if (question["correct"]) stats.correct++;
+
+        if (question["warmup"]) continue;
+
+        switch (question["format"]) {
+            case "space":
+                times["space"][0] += question["time"];
+                times["space"][1]++;
+                break;
+            case "camelCase":
+                times["camel"][0] += question["time"];
+                times["camel"][1]++;
+                break;
+            case "kebab-case":
+                times["kebab"][0] += question["time"];
+                times["kebab"][1]++;
+                break;
+        }
+    }
+
+    stats.averageWhiteSpaceTime = times["space"][0] / times["space"][1];
+    stats.averageCamelCaseTime = times["camel"][0] / times["camel"][1];
+    stats.averageKebabCaseTime = times["kebab"][0] / times["kebab"][1];
+
+    return stats;
+};
+
 export default function Finished() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -12,6 +49,7 @@ export default function Finished() {
 
     const theme = useTheme();
     const experiment = useSelector(selectExperiment);
+    const stats = generateStats(experiment);
 
     useEffect(() => {
         setLoading(true);
@@ -36,6 +74,24 @@ export default function Finished() {
             }}>
                 {t("Thank you for participating!")}
             </Typography>
+            <Typography variant="h5" sx={{fontWeight: 'bold', marginBottom: 1}}>
+                {t("Your stats")}
+            </Typography>
+
+            <Typography variant="subtitle1" sx={{marginBottom: 0}}>
+                {t("Correct answers")}: <b>{stats.correct} / {stats.total}</b>
+            </Typography>
+            <Typography variant="subtitle1" sx={{marginBottom: 0}}>
+                {t("Average time for white space")}: <b>{stats.averageWhiteSpaceTime.toFixed(2)} ms</b>
+            </Typography>
+            <Typography variant="subtitle1" sx={{marginBottom: 0}}>
+                {t("Average time for camelCase")}: <b>{stats.averageCamelCaseTime.toFixed(2)} ms</b>
+            </Typography>
+            <Typography variant="subtitle1" sx={{marginBottom: 2}}>
+                {t("Average time for kebab-case")}: <b>{stats.averageKebabCaseTime.toFixed(2)} ms</b>
+            </Typography>
+
+            <hr width={'100%'}/>
             {loading && <Stack justifyContent={'center'} alignItems={'center'}>
                 <Typography variant="subtitle1" sx={{marginBottom: 2}}>
                     {t("Sending your data... Please wait.")}

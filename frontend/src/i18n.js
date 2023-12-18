@@ -36,6 +36,11 @@ const resources = {
             "Sending your data... Please wait.": "Invio dei dati... Attendere prego.",
             "An error occurred while sending your data. Please notify the experiment conductors, reporting the following text:": "Si è verificato un errore durante l'invio dei dati. Si prega di notificare i conduttori dell'esperimento, riportando il seguente testo:",
             "Your data has been successfully sent. Thank you for participating!": "I tuoi dati sono stati inviati con successo. Grazie per aver partecipato!",
+            "Your stats": "Le tue statistiche",
+            "Correct answers": "Risposte corrette",
+            "Average time for white space": "Tempo medio con lo spazio",
+            "Average time for camelCase": "Tempo medio con il camelCase",
+            "Average time for kebab-case": "Tempo medio con il kebab-case",
         }
     }
 };
