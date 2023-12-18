@@ -23,7 +23,8 @@ const resources = {
             "The demo will show you whether your answer is correct or not; this will not be the case during the actual experiment.": "La demo ti mostrerà se la tua risposta è corretta o meno; questo non sarà il caso durante l'esperimento vero e proprio.", // form
             "Enter your information:": "Inserisci le tue informazioni:",
             "Age": "Età",
-            "Eye Issues": "Problemi di vista",
+            "Compromised Vision": "Vista compromessa",
+            "Select this checkbox if your vision is compromised temporarly (e.g. your eyes hurt) or permanently (e.g. you wear glasses)": "Spunta questa casella se la tua vista è compromessa temporaneamente (per esempio, ti fanno male gli occhi) o permanentemente (per esempio, porti gli occhiali)",
             "Dyslexia": "Dislessia",
             "Fluent English Speaker": "Inglese fluente",
             "Programming Experience": "Esperienza di programmazione",

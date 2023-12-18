@@ -1,5 +1,5 @@
 import {
-    Button, Checkbox, FormControl, FormControlLabel, FormLabel, Icon, Stack, TextField, Tooltip, Typography
+    Button, Checkbox, FormControl, FormControlLabel, FormLabel, Stack, TextField, Tooltip, Typography
 } from "@mui/material";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import React, {useState} from "react";
@@ -93,11 +93,18 @@ export default function Form({onSubmit}) {
                 />
             </FormControl>
 
-            <FormControlLabel
-                control={<Checkbox checked={eyeIssues}
-                                   onChange={(event) => setEyeIssues(event.target.checked)}/>}
-                label={t("Eye Issues")}
-            />
+            <Stack direction={'row'} alignItems={'center'}>
+                <FormControlLabel
+                    sx={{marginRight: 1}}
+                    control={<Checkbox checked={eyeIssues}
+                                       onChange={(event) => setEyeIssues(event.target.checked)}/>}
+                    label={t("Compromised Vision")}
+                />
+                <Tooltip
+                    title={t("Select this checkbox if your vision is compromised temporarly (e.g. your eyes hurt) or permanently (e.g. you wear glasses)")}>
+                    <HelpOutlineIcon color={'info'} sx={{fontSize: 24}}/>
+                </Tooltip>
+            </Stack>
 
             <FormControlLabel
                 control={<Checkbox checked={dyslexia}
