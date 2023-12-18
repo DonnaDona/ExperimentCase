@@ -15,7 +15,7 @@ export default function Finished() {
 
     useEffect(() => {
         setLoading(true);
-        return axios.post('http://localhost:5000/api/experiments', experiment).then(res => {
+        return axios.post('/api/experiments', experiment).then(res => {
             console.log(res);
         }).catch(err => {
             setError(err);
