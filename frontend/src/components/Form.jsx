@@ -24,34 +24,46 @@ export default function Form({onSubmit}) {
 
     const {t} = useTranslation();
 
-    const handleClick = () => {
+    const checkAge = (age) => {
         if (age === '') {
             setAgeError(t("Age is required"));
-            return;
+            return false;
+        } else if (parseInt(age) < 0 || parseInt(age) > 110) {
+            setAgeError(t("Age must be between 0 and 110"));
+            return false;
+        } else {
+            setAgeError(false);
+            return true;
         }
+    }
+
+    const checkProgrammingExperience = (programmingExperience) => {
         if (programmingExperience === '') {
             setProgrammingExperienceError(t("Programming experience is required"));
-            return;
+            return false;
+        } else if (parseInt(programmingExperience) < 0 || parseInt(programmingExperience) > 50) {
+            setProgrammingExperienceError(t("Programming experience must be between 0 and 50"));
+            return false;
+        } else {
+            setProgrammingExperienceError(false);
+            return true;
         }
+    }
+
+    const handleClick = () => {
+        if (!checkAge(age)) return;
+        if (!checkProgrammingExperience(programmingExperience)) return;
         onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, languages});
     }
 
     const handleAgeChange = (event) => {
         setAge(event.target.value);
-        if (event.target.value === '') {
-            setAgeError(t("Age is required"));
-        } else {
-            setAgeError(false);
-        }
+        checkAge(event.target.value);
     }
 
     const handleProgrammingExperienceChange = (event) => {
         setProgrammingExperience(event.target.value);
-        if (event.target.value === '') {
-            setProgrammingExperienceError(t("Programming experience is required"));
-        } else {
-            setProgrammingExperienceError(false);
-        }
+        checkProgrammingExperience(event.target.value);
     }
 
     return (
@@ -110,6 +122,7 @@ export default function Form({onSubmit}) {
                     value={programmingExperience}
                     required
                     error={programmingExperienceError}
+                    helperText={programmingExperienceError}
                     onChange={handleProgrammingExperienceChange}
                     InputLabelProps={{
                         shrink: true,

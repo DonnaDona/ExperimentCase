@@ -29,7 +29,9 @@ const resources = {
             "Programming Experience": "Esperienza di programmazione",
             "Start": "Inizia",
             "Programming experience is required": "Il campo 'Esperienza di programmazione' è obbligatorio",
+            "Programming experience must be between 0 and 50": "L'esperienza di programmazione deve essere compresa tra 0 e 50 anni",
             "Age is required": "Il campo 'Età' è obbligatorio",
+            "Age must be between 0 and 110": "L'età deve essere compresa tra 0 e 110 anni",
             "Programming Languages": "Linguaggi di programmazione",
             "Select all languages you are familiar with.": "Seleziona tutti i linguaggi che hai utilizzato.", // finished
             "Thank you for participating!": "Grazie per aver partecipato!",
