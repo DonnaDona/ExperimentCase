@@ -3,7 +3,14 @@ import difflib
 
 
 def extract_words(words, num):
-    return random.sample(words, num)
+    """
+    Words are extracted from the end of the list, which is shuffled before each extraction.
+    This way, the extraction is random and the words are not repeated.
+    """
+    extracted_words = []
+    for _ in range(num):
+        extracted_words.append(words.pop())
+    return extracted_words
 
 
 def format_words(words, case):
@@ -97,6 +104,9 @@ def main(demo=False, words_per_question=2, unique_questions=10, warmup_questions
     experiment = {"warmup": [], "questions": []}
     with open("./words.txt", "r") as f:
         words_list = f.read().splitlines()
+        words_list = [word for word in words_list if len(word) <= 8 and len(word) >= 4]
+        random.shuffle(words_list)
+        print(len(words_list))
 
         experiment["warmup"] = generate_questions(words_list, words_per_question, warmup_questions, False, False)
         experiment["questions"] = generate_questions(words_list, words_per_question, unique_questions)
