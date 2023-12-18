@@ -5,6 +5,7 @@ const answerSchema = new mongoose.Schema({
     warmup: {type: Boolean, required: true},
     answer: {type: String, required: true},
     answerIndex: {type: Number, required: true},
+    correct: {type: Boolean, required: true},
     time: {type: Number, required: true},
     format: {type: String, required: true},
 });
@@ -18,9 +19,7 @@ const formSchema = new mongoose.Schema({
     programmingExperience: {type: Number, required: true, min: 0, max: 50},
     isTouchScreen: {type: Boolean, required: true},
     languages: {
-        type: [String],
-        enum: ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'],
-        default: [],
+        type: [String], enum: ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'], default: [],
     },
 });
 const Form = mongoose.model('Form', formSchema);
