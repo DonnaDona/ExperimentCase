@@ -1,7 +1,9 @@
 import {Box, Checkbox, Chip, FormControl, FormHelperText, InputLabel, MenuItem, Select} from "@mui/material";
+import {useTranslation} from "react-i18next";
 
 const languages = ['C/C++', 'C#', 'CSS', 'HTML', 'Java', 'Python', 'Rust', 'Other'];
 export default function LanguagesPicker({onChange, value}) {
+    const {t} = useTranslation();
     const handleChange = (event) => {
         onChange(event.target.value);
     };
@@ -28,7 +30,7 @@ export default function LanguagesPicker({onChange, value}) {
                 {language}
             </MenuItem>)}
         </Select>
-        <FormHelperText sx={{textAlign: 'start'}}>Select all languages you are familiar with.</FormHelperText>
+        <FormHelperText sx={{textAlign: 'start'}}>{t("Select all languages you are familiar with.")}</FormHelperText>
     </>);
 
 }

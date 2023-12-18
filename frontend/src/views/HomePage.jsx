@@ -16,8 +16,10 @@ import {
 import {setPersonData, startDemo, startExperiment} from "./experiment/experimentSlice.jsx";
 import {useDispatch} from "react-redux";
 import Form from "../components/Form.jsx";
+import {useTranslation} from "react-i18next";
 
 export default function HomePage() {
+    const {t} = useTranslation();
     const theme = useTheme();
     const dispatch = useDispatch();
 
@@ -35,39 +37,36 @@ export default function HomePage() {
                 borderRadius: 6, padding: 5,
             }, width: 'min(600px, 100%)',
         }}>
-        <Typography variant="h3">Camel or Kebab case?</Typography>
-        <Typography variant="h6" sx={{marginTop: 2}}>A study on the readability of different naming
-            conventions.</Typography>
+        <Typography variant="h3">{t("Camel or Kebab case?")}</Typography>
+        <Typography variant="h6" sx={{marginTop: 2}}>{t("A study on the readability of different naming conventions.")}</Typography>
         {state === 0 && <>
             <Stack>
 
                 <Typography variant="body1" sx={{marginTop: 2}}>
-                    This study is conducted in the context of a project for the course <i>Experimentation and
+                    {t("This study is conducted in the context of a project for the course ")}<i>Experimentation and
                     Evaluation</i>.
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
-                    You will be shown 2 words separated by a white space, and 4 options written in some
-                    naming convention.
-
-                    Your task is to select, in the least time possible, the option that rewrites the original 2 words in
-                    that naming convention.
+                    {t("You will be shown 2 words separated by a white space, and 4 options written in some naming convention. Your task is to select, in the least time possible, the option that rewrites the original 2 words in that naming convention.")}
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
-                    This study will take approximately 5 minutes to complete.
+                    {t("For example, the words \"hello world\" can be rewritten in camel case as \"helloWorld\" or in kebab case as \"hello-world\".")}
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
-                    First, we need to collect some information about you.
+                    {t("This study will take approximately 5 minutes to complete.")}
                 </Typography>
-                <Button sx={{marginTop: 2}} variant="contained" onClick={() => setState(1)}>Continue</Button>
+                <Typography variant="body1" sx={{marginTop: 1}}>
+                    {t("First, we need to collect some information about you.")}
+                </Typography>
+                <Button sx={{marginTop: 2}} variant="contained" onClick={() => setState(1)}>{t("Continue")}</Button>
             </Stack>
             <hr style={{marginTop: 16, marginBottom: 16}}/>
             <Typography variant="body1" sx={{marginTop: 1}}>
-                Not clear? Try the demo mode using the button below.<br/>
-                The demo can be stopped at any time by clicking the "Stop" button.
+                {t("Not clear? Try the demo mode using the button below.")}<br/>
+                {t("The demo can be stopped at any time by clicking the \"Stop\" button.")}
             </Typography>
             <Typography variant="body1" sx={{marginTop: 1}}>
-                <i><b>Note</b></i>: The demo will show you whether your answer is correct or not; this will not be the case
-                during the actual experiment.
+                <i><b>{t("Note")}</b></i>: {t("The demo will show you whether your answer is correct or not; this will not be the case during the actual experiment.")}
             </Typography>
             <Button sx={{marginTop: 2}} variant="outlined" onClick={() => dispatch(startDemo())}>Demo</Button>
         </>}

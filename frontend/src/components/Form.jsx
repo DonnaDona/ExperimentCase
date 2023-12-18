@@ -4,6 +4,7 @@ import {
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import React, {useState} from "react";
 import LanguagesPicker from "./LangaguesPicker.jsx";
+import {useTranslation} from "react-i18next";
 
 const leftAlignedStyle = {
     textAlign: 'start'
@@ -21,13 +22,15 @@ export default function Form({onSubmit}) {
     const [ageError, setAgeError] = useState(false);
     const [programmingExperienceError, setProgrammingExperienceError] = useState(false);
 
+    const {t} = useTranslation();
+
     const handleClick = () => {
         if (age === '') {
-            setAgeError("Age is required");
+            setAgeError(t("Age is required"));
             return;
         }
         if (programmingExperience === '') {
-            setProgrammingExperienceError("Programming experience is required");
+            setProgrammingExperienceError(t("Programming experience is required"));
             return;
         }
         onSubmit({age, eyeIssues, dyslexia, isEnglishSpeaker, programmingExperience, languages});
@@ -36,7 +39,7 @@ export default function Form({onSubmit}) {
     const handleAgeChange = (event) => {
         setAge(event.target.value);
         if (event.target.value === '') {
-            setAgeError("Age is required");
+            setAgeError(t("Age is required"));
         } else {
             setAgeError(false);
         }
@@ -45,7 +48,7 @@ export default function Form({onSubmit}) {
     const handleProgrammingExperienceChange = (event) => {
         setProgrammingExperience(event.target.value);
         if (event.target.value === '') {
-            setProgrammingExperienceError("Programming experience is required");
+            setProgrammingExperienceError(t("Programming experience is required"));
         } else {
             setProgrammingExperienceError(false);
         }
@@ -54,11 +57,11 @@ export default function Form({onSubmit}) {
     return (
 
         <Stack width={'100%'} maxWidth={'350px'} sx={{gap: 1}}>
-            <Typography variant="h6" sx={{marginY: 2}}>Enter your information:</Typography>
+            <Typography variant="h6" sx={{marginY: 2}}>{t("Enter your information:")}</Typography>
             <FormControl sx={leftAlignedStyle}>
                 <FormLabel component="legend"
                            error={ageError}>
-                    Age
+                    {t("Age")}
                 </FormLabel>
                 <TextField
                     size={"small"}
@@ -81,25 +84,25 @@ export default function Form({onSubmit}) {
             <FormControlLabel
                 control={<Checkbox checked={eyeIssues}
                                    onChange={(event) => setEyeIssues(event.target.checked)}/>}
-                label="Eye Issues"
+                label={t("Eye Issues")}
             />
 
             <FormControlLabel
                 control={<Checkbox checked={dyslexia}
                                    onChange={(event) => setDyslexia(event.target.checked)}/>}
-                label="Dyslexia"
+                label={t("Dyslexia")}
             />
 
             <FormControlLabel
                 control={<Checkbox checked={isEnglishSpeaker}
                                    onChange={(event) => setIsEnglishSpeaker(event.target.checked)}/>}
-                label="Fluent English Speaker"
+                label={t("Fluent English Speaker")}
             />
 
             <FormControl sx={leftAlignedStyle}>
                 <FormLabel component="legend"
                            error={programmingExperienceError}>
-                    Programming Experience</FormLabel>
+                    {t("Programming Experience")}</FormLabel>
                 <TextField
                     size={"small"}
                     type="number"
@@ -119,7 +122,7 @@ export default function Form({onSubmit}) {
 
             <FormControl sx={leftAlignedStyle}>
                 <FormLabel component="legend">
-                    <span>Programming Languages</span>
+                    <span>{t("Programming Languages")}</span>
                 </FormLabel>
                 <LanguagesPicker value={languages} onChange={setLanguages}/>
             </FormControl>
@@ -129,7 +132,7 @@ export default function Form({onSubmit}) {
                 sx={{marginY: 2}}
                 onClick={handleClick}
             >
-                Start
+                {t("Start")}
             </Button>
         </Stack>);
 }

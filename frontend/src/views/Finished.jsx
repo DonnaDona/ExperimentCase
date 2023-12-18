@@ -3,10 +3,12 @@ import {useEffect, useState} from "react";
 import {selectExperiment} from "./experiment/experimentSlice.jsx";
 import {useSelector} from "react-redux";
 import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 export default function Finished() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const {t} = useTranslation();
 
     const experiment = useSelector(selectExperiment);
 
@@ -27,24 +29,23 @@ export default function Finished() {
         }}>
         <Stack>
             <Typography variant="h3" sx={{fontWeight: "bold", marginBottom: 2}}>
-                Thank you for participating!
+                {t("Thank you for participating!")}
             </Typography>
             {loading && <Stack justifyContent={'center'} alignItems={'center'}>
                 <Typography variant="h5" sx={{marginBottom: 2}}>
-                    Sending your data... Please wait.
+                    {t("Sending your data... Please wait.")}
                 </Typography>
                 <CircularProgress/>
             </Stack>}
-            {error && <Stack justifyContent={'center'} alignItems={'center'}><Typography variant="h5" sx={{marginBottom: 2}}>
-                An error occurred while sending your data.
-                Please notify the experiment conductors, reporting the following text:
-            </Typography>
-                <textarea style={{width: "500px", height: "200px"}}
-                          value={`${error}\n\n${JSON.stringify(experiment)}`}/>
-            </Stack>}
+            {error &&
+                <Stack justifyContent={'center'} alignItems={'center'}><Typography variant="h5" sx={{marginBottom: 2}}>
+                    {t("An error occurred while sending your data. Please notify the experiment conductors, reporting the following text:")}
+                </Typography>
+                    <textarea style={{width: "500px", height: "200px"}}
+                              value={`${error}\n\n${JSON.stringify(experiment)}`}/>
+                </Stack>}
             {!loading && !error && <Typography variant="h5">
-                Your data has been successfully sent.
-                Thank you for participating!
+                {t("Your data has been successfully sent. Thank you for participating!")}
             </Typography>}
         </Stack>
     </Card>);
