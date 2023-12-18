@@ -42,11 +42,11 @@ const resources = {
 
 const getLanguage = () => {
     const language = localStorage.getItem("language");
-    if (language) {
+    if (language && resources[language]) {
         return language;
     }
-    const navigatorLanguage = navigator.language;
-    if (navigatorLanguage) {
+    const navigatorLanguage = navigator.language.split("-")[0];
+    if (navigatorLanguage && resources[navigatorLanguage]) {
         localStorage.setItem("language", navigatorLanguage);
         return navigatorLanguage;
     }
