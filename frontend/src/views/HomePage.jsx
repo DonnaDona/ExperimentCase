@@ -62,8 +62,11 @@ export default function HomePage() {
                     {t("For example, the words \"hello world\" can be rewritten in camel case as \"helloWorld\" or in kebab case as \"hello-world\".")}
                 </Typography>
                 <Typography variant="body1" sx={{marginTop: 1}}>
-                    {t("This study will take approximately 5 minutes to complete.")}
+                    {t("This study will take approximately 5 minutes to complete. Please do not take breaks during the study, as this will affect the results. Do not refresh the page or close the browser tab. Make sure you do not have any active translation extensions.")}
                 </Typography>
+                <Typography variant="body1" sx={{marginTop: 1}}>
+                    {t("It is highly suggested to try the demo mode first, to check whether you understand the task properly and get used to the environment.")}
+                </Typography>   
                 <Typography variant="body1" sx={{marginTop: 1}}>
                     {t("First, we need to collect some information about you.")}
                 </Typography>
