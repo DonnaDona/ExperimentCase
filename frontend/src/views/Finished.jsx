@@ -11,9 +11,9 @@ const generateStats = (experiment) => {
     };
     const {answers} = experiment;
     stats.total = answers.length;
-    
-    const times = {"camel": [0,0], "kebab": [0,0], "space": [0,0]};
-    
+
+    const times = {"camel": [0, 0], "kebab": [0, 0], "space": [0, 0]};
+
     for (const question of answers) {
         if (question["correct"]) stats.correct++;
 
@@ -82,15 +82,14 @@ export default function Finished() {
                 {t("Correct answers")}: <b>{stats.correct} / {stats.total}</b>
             </Typography>
             <Typography variant="subtitle1" sx={{marginBottom: 0}}>
-                {t("Average time for white space")}: <b>{stats.averageWhiteSpaceTime.toFixed(2)} ms</b>
+                {t("Average time for white space")}: <b>{(stats.averageWhiteSpaceTime / 1000).toFixed(2)} s</b>
             </Typography>
             <Typography variant="subtitle1" sx={{marginBottom: 0}}>
-                {t("Average time for camelCase")}: <b>{stats.averageCamelCaseTime.toFixed(2)} ms</b>
+                {t("Average time for camelCase")}: <b>{(stats.averageCamelCaseTime / 1000).toFixed(2)} s</b>
             </Typography>
             <Typography variant="subtitle1" sx={{marginBottom: 2}}>
-                {t("Average time for kebab-case")}: <b>{stats.averageKebabCaseTime.toFixed(2)} ms</b>
+                {t("Average time for kebab-case")}: <b>{(stats.averageKebabCaseTime / 1000).toFixed(2)} s</b>
             </Typography>
-
             <hr width={'100%'}/>
             {loading && <Stack justifyContent={'center'} alignItems={'center'}>
                 <Typography variant="subtitle1" sx={{marginBottom: 2}}>

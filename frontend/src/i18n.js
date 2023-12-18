@@ -35,7 +35,7 @@ const resources = {
             "Age is required": "Il campo 'Età' è obbligatorio",
             "Age must be between 0 and 110": "L'età deve essere compresa tra 0 e 110 anni",
             "Programming Languages": "Linguaggi di programmazione",
-            "Select all languages you are familiar with.": "Seleziona tutti i linguaggi che hai utilizzato.", // finished
+            "Select all languages you are familiar with. Leave blank if none.": "Seleziona tutti i linguaggi che hai utilizzato. Lascia vuoto se nessuno.",
             "Thank you for participating!": "Grazie per aver partecipato!",
             "Sending your data... Please wait.": "Invio dei dati... Attendere prego.",
             "An error occurred while sending your data. Please notify the experiment conductors, reporting the following text:": "Si è verificato un errore durante l'invio dei dati. Si prega di notificare i conduttori dell'esperimento, riportando il seguente testo:",

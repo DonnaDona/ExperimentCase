@@ -30,7 +30,7 @@ export default function PLPicker({onChange, value}) {
                 {language}
             </MenuItem>)}
         </Select>
-        <FormHelperText sx={{textAlign: 'start'}}>{t("Select all languages you are familiar with.")}</FormHelperText>
+        <FormHelperText sx={{textAlign: 'start'}}>{t("Select all languages you are familiar with. Leave blank if none.")}</FormHelperText>
     </>);
 
 }
